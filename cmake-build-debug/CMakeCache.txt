@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Enable the address sanitizer
+ADDRESS_SANITIZER:BOOL=OFF
+
 //Android JNI IOSystem support is active
 ASSIMP_ANDROID_JNIIOSYSTEM:BOOL=OFF
 
@@ -417,6 +420,15 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Doxygen documentation generation tool (https://www.doxygen.nl)
 DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
 
+//Enable the address sanitizer
+ENABLE_ADDRSAN:BOOL=OFF
+
+//Enable the thread data race sanitizer
+ENABLE_TSAN:BOOL=OFF
+
+//Enable the ub sanitizer
+ENABLE_UBSAN:BOOL=OFF
+
 //Path to a file.
 FREETYPE_INCLUDE_DIR_freetype2:PATH=/usr/include/freetype2
 
@@ -503,6 +515,9 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/librt.a
+
+//Enable the ub sanitizer
+UB_SANITIZER:BOOL=OFF
 
 //Path to a file.
 X11_ICE_INCLUDE_PATH:PATH=/usr/include

@@ -1,0 +1,17 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_MAKE_PROGRAM=/opt/clion/bin/ninja/linux/x64/ninja -G Ninja -S /home/brett/git/parksandrec -B /home/brett/git/parksandrec/cmake-build-minsizerel
+Standard Files /home/brett/git/parksandrec/libs/BLT/src/blt/std/filesystem.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/format.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/loader.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/logging.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/system.cpp
+Profiler Files /home/brett/git/parksandrec/libs/BLT/src/blt/profiling/profiler.cpp
+Source: /home/brett/git/parksandrec
+Current Source: /home/brett/git/parksandrec/libs/BLT
+BLT 0.0.1 Successfully included!
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Using X11 for window creation
+-- Shared libraries disabled
+-- compiling zlib from sources
+-- Enabled importer formats: AMF 3DS AC ASE ASSBIN B3D BVH COLLADA DXF CSM HMP IRRMESH IQM IRR LWO LWS M3D MD2 MD3 MD5 MDC MDL NFF NDO OFF OBJ OGRE OPENGEX PLY MS3D COB BLEND IFC XGL FBX Q3D Q3BSP RAW SIB SMD STL TERRAGEN 3D X X3D GLTF 3MF MMD
+-- Disabled importer formats:
+-- Enabled exporter formats: OBJ OPENGEX PLY 3DS ASSBIN ASSXML M3D COLLADA FBX STL X X3D GLTF 3MF PBRT ASSJSON STEP
+-- Disabled exporter formats:
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/brett/git/parksandrec/cmake-build-minsizerel

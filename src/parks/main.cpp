@@ -20,8 +20,7 @@ int main(){
     resources::loadTexture("/home/brett/git/parksandrec/resources/textures/test.png", "test.png");
 
     Window::create(settings);
-    Window::setupGLAD();
-    Window::setupDearImGUI();
+    Window::setMouseVisible(false);
     
     resources::beginLoading();
 

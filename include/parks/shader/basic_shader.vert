@@ -10,9 +10,16 @@ layout (location = 2) in vec2 uv;
 out vec3 colors;
 out vec2 uvs;
 
+layout (std140) uniform Matrices
+{
+    mat4 perspective;
+    mat4 view;
+    mat4 pvm;
+};
+
 void main()
 {
-    gl_Position = vec4(position.x, position.y, position.z, 1.0);
+    gl_Position = pvm * vec4(position.x, position.y, position.z, 1.0);
     colors = color;
     uvs = uv;
 }

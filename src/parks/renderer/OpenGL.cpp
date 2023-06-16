@@ -113,7 +113,7 @@ namespace parks {
 
         glValidateProgram(programID);
         bind();
-        setUniformBlockLocation("StandardMatrices", 0);
+        setUniformBlockLocation("Matrices", 0);
         glUseProgram(0);
 
     }

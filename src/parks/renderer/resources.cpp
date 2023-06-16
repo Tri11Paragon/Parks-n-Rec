@@ -7,6 +7,8 @@
 #include <mutex>
 #include <queue>
 #include <parks/config.h>
+#include <parks/error_logging.h>
+#include "parks/status.h"
 
 namespace parks {
     
@@ -40,7 +42,12 @@ namespace parks {
     }
     
     GLTexture2D* resources::getTexture(const std::string& texture_name) {
-        return TextureLoader.gl2DTextures[texture_name];
+        try {
+            return TextureLoader.gl2DTextures[texture_name];
+        } catch (const std::exception& e){
+            BLT_ERROR("Unable to retrieve texture! Exception caught.");
+            blt::logging::printErrorLog(e.what());
+        }
     }
     
     void resources::beginLoading() {
@@ -49,54 +56,77 @@ namespace parks {
         for (int i = 0; i < TextureLoader.numThreads; i++) {
             TextureLoader.threads[i] = new std::thread(
                     []() -> void {
-                        stbi_set_flip_vertically_on_load_thread(true);
-                        while (!TextureLoader.texturesToLoad.empty()) {
-                            LoadableTexture texture;
-                            {
-                                std::scoped_lock<std::mutex> textureQueueLock{
-                                        TextureLoader.textureQueueMutex};
-                                texture = TextureLoader.texturesToLoad.front();
-                                TextureLoader.texturesToLoad.pop();
+                        try {
+                            stbi_set_flip_vertically_on_load_thread(true);
+                            while (!TextureLoader.texturesToLoad.empty()) {
+                                LoadableTexture texture;
+                                {
+                                    std::scoped_lock<std::mutex> textureQueueLock{
+                                            TextureLoader.textureQueueMutex};
+                                    texture = TextureLoader.texturesToLoad.front();
+                                    TextureLoader.texturesToLoad.pop();
+                                }
+                                LoadedTexture loadedTexture;
+                                loadedTexture.data = stbi_load(
+                                        texture.path.c_str(), &loadedTexture.width,
+                                        &loadedTexture.height, &loadedTexture.channels, 4
+                                );
+                                loadedTexture.channels = 4;
+                                loadedTexture.textureName = texture.name;
+                                {
+                                    std::scoped_lock<std::mutex> loadQueueLock{
+                                            TextureLoader.glLoadQueueMutex};
+                                    TextureLoader.loadedTextures.push(loadedTexture);
+                                }
                             }
-                            LoadedTexture loadedTexture;
-                            loadedTexture.data = stbi_load(texture.path.c_str(), &loadedTexture.width, &loadedTexture.height, &loadedTexture.channels, 4);
-                            loadedTexture.channels = 4;
-                            loadedTexture.textureName = texture.name;
                             {
-                                std::scoped_lock<std::mutex> loadQueueLock{TextureLoader.glLoadQueueMutex};
-                                TextureLoader.loadedTextures.push(loadedTexture);
+                                std::scoped_lock<std::mutex> threadSyncLock(
+                                        TextureLoader.threadSyncMutex
+                                );
+                                TextureLoader.finishedThreads++;
                             }
-                        }
-                        {
-                            std::scoped_lock<std::mutex> threadSyncLock(
-                                    TextureLoader.threadSyncMutex
-                            );
-                            TextureLoader.finishedThreads++;
+                        } catch (const std::exception& e) {
+                            BLT_ERROR("An error has been detected in the loader thread loop!");
+                            blt::logging::printErrorLog(e.what());
+                            std::exit(LOADER_ERROR);
                         }
                     }
             );
         }
-        
-        while (TextureLoader.finishedThreads < TextureLoader.numThreads || !TextureLoader.loadedTextures.empty()) {
-            LoadedTexture texture;
-            {
-                if (TextureLoader.loadedTextures.empty())
-                    continue;
-                std::scoped_lock<std::mutex> loadQueueLock{TextureLoader.glLoadQueueMutex};
-                texture = TextureLoader.loadedTextures.front();
-                TextureLoader.loadedTextures.pop();
+        try {
+            while (TextureLoader.finishedThreads < TextureLoader.numThreads ||
+                   !TextureLoader.loadedTextures.empty()) {
+                LoadedTexture texture;
+                {
+                    if (TextureLoader.loadedTextures.empty())
+                        continue;
+                    std::scoped_lock<std::mutex> loadQueueLock{TextureLoader.glLoadQueueMutex};
+                    texture = TextureLoader.loadedTextures.front();
+                    TextureLoader.loadedTextures.pop();
+                }
+                auto* texture2D = new GLTexture2D;
+                texture2D->upload(
+                        texture.data, GL_UNSIGNED_BYTE, texture.width, texture.height,
+                        texture.channels
+                );
+                glGenerateMipmap(GL_TEXTURE_2D);
+                TextureLoader.gl2DTextures[texture.textureName] = texture2D;
+                stbi_image_free(texture.data);
             }
-            auto* texture2D = new GLTexture2D;
-            texture2D->upload(texture.data, GL_UNSIGNED_BYTE, texture.width, texture.height, texture.channels);
-            glGenerateMipmap(GL_TEXTURE_2D);
-            TextureLoader.gl2DTextures[texture.textureName] = texture2D;
-            stbi_image_free(texture.data);
+        } catch (const std::exception& e){
+            BLT_ERROR("Exception was caught in texture -> gl load loop!");
+            blt::logging::printErrorLog(e.what());
         }
         
-        for (int i = 0; i < TextureLoader.numThreads; i++) {
-            if (TextureLoader.threads[i]->joinable())
-                TextureLoader.threads[i]->join();
-            delete TextureLoader.threads[i];
+        try {
+            for (int i = 0; i < TextureLoader.numThreads; i++) {
+                if (TextureLoader.threads[i]->joinable())
+                    TextureLoader.threads[i]->join();
+                delete TextureLoader.threads[i];
+            }
+        } catch (const std::exception& e){
+            BLT_ERROR("Error occurred while trying to cleanup threads!");
+            blt::logging::printErrorLog(e.what());
         }
         delete[] TextureLoader.threads;
         BLT_INFO("All resources have been loaded. A total of %d textures!", TextureLoader.gl2DTextures.size());

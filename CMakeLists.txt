@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
 project(parksnrec VERSION 0.0.1)
 
+option(ENABLE_ADDRSAN "Enable the address sanitizer" OFF)
+option(ENABLE_UBSAN "Enable the ub sanitizer" OFF)
+option(ENABLE_TSAN "Enable the thread data race sanitizer" OFF)
+
 set(CMAKE_CXX_STANDARD 17)
 
 set(OpenGL_GL_PREFERENCE GLVND)
@@ -30,3 +34,18 @@ target_link_libraries(parksnrec BLT)
 target_link_libraries(parksnrec OpenGL)
 target_link_libraries(parksnrec assimp)
 target_compile_options(parksnrec PRIVATE -Wall -Wextra -Wpedantic)
+
+if (${ENABLE_ADDRSAN} MATCHES ON)
+    target_compile_options(parksnrec PRIVATE -fsanitize=address)
+    target_link_options(parksnrec PRIVATE -fsanitize=address)
+endif ()
+
+if (${ENABLE_UBSAN} MATCHES ON)
+    target_compile_options(parksnrec PRIVATE -fsanitize=undefined)
+    target_link_options(parksnrec PRIVATE -fsanitize=undefined)
+endif ()
+
+if (${ENABLE_TSAN} MATCHES ON)
+    target_compile_options(parksnrec PRIVATE -fsanitize=thread)
+    target_link_options(parksnrec PRIVATE -fsanitize=thread)
+endif ()

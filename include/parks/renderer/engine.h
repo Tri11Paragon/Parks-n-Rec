@@ -11,6 +11,7 @@
 #include "parks/config.h"
 #include <parks/shader/basic_shader.vert>
 #include <parks/shader/basic_shader.frag>
+#include <parks/renderer/player.h>
 
 namespace parks {
     struct StaticEntity {
@@ -44,6 +45,10 @@ namespace parks {
             Shader testShader{BasicShaderVertex, BasicShaderFragment};
             VAOStorageObject vao;
             const Settings& settings;
+            
+            Player player;
+            CameraController basicCameraController {player};
+            
         public:
             explicit Engine(const Settings& settings);
             

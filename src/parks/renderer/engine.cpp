@@ -21,13 +21,17 @@ namespace parks {
             Window::preUpdate();
             glClearColor(0, 0.5, 0.0, 1.0);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            
+            basicCameraController.update();
 
 #ifdef BUILD_DEV_TOOLS
-            auto renderMode = settings.getProperty(
+            auto renderMode = settings.getProperty<int>(
                     Properties::RENDER_MODE
-            )->as<Properties::Value<int>>();
+            );
             if (renderMode)
                 glPolygonMode(GL_FRONT_AND_BACK, renderMode->getValue());
+            if (Window::keyPressedLastFrame(GLFW_KEY_ESCAPE))
+                Window::setMouseVisible(!Window::isMouseVisible());
 #endif
             
             testShader.bind();

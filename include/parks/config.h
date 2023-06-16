@@ -9,6 +9,11 @@
 
 namespace parks {
 
+# define PI           3.14159265358979323846
+    inline double degreeToRad(double deg){
+        return deg * (PI / 180);
+    }
+    
     // Build Config
 #define BUILD_DEV_TOOLS
 //#define BUILD_RELEASE_MODE
