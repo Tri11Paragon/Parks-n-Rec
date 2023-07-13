@@ -1,0 +1,6 @@
+[submodule "libs/ImNodes"]
+	path = libs/ImNodes
+	url = https://github.com/rokups/ImNodes
+[submodule "libs/BLT"]
+	path = libs/BLT
+	url = https://github.com/Tri11Paragon/blt/
