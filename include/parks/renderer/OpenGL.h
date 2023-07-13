@@ -30,12 +30,22 @@ namespace parks {
                 glBindTexture(GL_TEXTURE_2D, textureID);
             }
             
+            void allocate(GLenum type, int width, int height, int channels = 4) {
+                auto storage_type = channels == 4 ? GL_RGBA : GL_RGB;
+                bind();
+                glTexImage2D(GL_TEXTURE_2D, 0, storage_type, width, height, 0, storage_type, type,
+                             nullptr);
+                textureInfo.width = width;
+                textureInfo.height = height;
+                textureInfo.channels = channels;
+            }
+            
             void upload(void* data, GLenum type, int width, int height, int channels = 4) {
                 auto storage_type = channels == 4 ? GL_RGBA : GL_RGB;
                 bind();
-                glTexImage2D(
-                        GL_TEXTURE_2D, 0, storage_type, width, height, 0, storage_type, type, data
-                );
+                if (textureInfo.width != width || textureInfo.height != height || textureInfo.channels != channels)
+                    allocate(type, width, height, channels);
+                glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, storage_type, type, data);
                 textureInfo.width = width;
                 textureInfo.height = height;
                 textureInfo.channels = channels;

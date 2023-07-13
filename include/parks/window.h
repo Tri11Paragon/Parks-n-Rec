@@ -8,6 +8,8 @@
 
 namespace parks::Window {
     
+    constexpr unsigned int UBO_MATRICES_COUNT = 4;
+    
     struct WindowSize {
         int width, height;
     };
@@ -22,6 +24,7 @@ namespace parks::Window {
     void setCloseRequested(bool shouldClose);
     void updateViewMatrix(const blt::mat4x4& view);
     void updatePerspectiveMatrix(const blt::mat4x4& perspective);
+    void updateOrthograhpicMatrix(const blt::mat4x4& ortho);
     const blt::mat4x4& getViewMatrix();
     const blt::mat4x4& getPerspectiveMatrix();
     const WindowSize& getWindowSize();

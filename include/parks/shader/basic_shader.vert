@@ -15,6 +15,7 @@ layout (std140) uniform Matrices
     mat4 perspective;
     mat4 view;
     mat4 pvm;
+    mat4 ortho;
 };
 
 void main()

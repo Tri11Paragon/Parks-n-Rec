@@ -1,5 +1,5 @@
 /usr/bin/cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_MAKE_PROGRAM=/opt/clion/bin/ninja/linux/x64/ninja -G Ninja -S /home/brett/git/parksandrec -B /home/brett/git/parksandrec/cmake-build-minsizerel
-Standard Files /home/brett/git/parksandrec/libs/BLT/src/blt/std/filesystem.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/format.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/loader.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/logging.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/system.cpp
+Standard Files /home/brett/git/parksandrec/libs/BLT/src/blt/std/filesystem.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/format.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/loader.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/logging.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/string.cpp;/home/brett/git/parksandrec/libs/BLT/src/blt/std/system.cpp
 Profiler Files /home/brett/git/parksandrec/libs/BLT/src/blt/profiling/profiler.cpp
 Source: /home/brett/git/parksandrec
 Current Source: /home/brett/git/parksandrec/libs/BLT

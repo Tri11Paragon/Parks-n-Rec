@@ -66,6 +66,8 @@ namespace parks {
                                     texture = TextureLoader.texturesToLoad.front();
                                     TextureLoader.texturesToLoad.pop();
                                 }
+                                if (texture.path.empty())
+                                    continue;
                                 LoadedTexture loadedTexture;
                                 loadedTexture.data = stbi_load(
                                         texture.path.c_str(), &loadedTexture.width,
@@ -77,6 +79,7 @@ namespace parks {
                                     std::scoped_lock<std::mutex> loadQueueLock{
                                             TextureLoader.glLoadQueueMutex};
                                     TextureLoader.loadedTextures.push(loadedTexture);
+                                    BLT_TRACE("Loaded texture '%s' with width/height: (%d, %d)", loadedTexture.textureName.c_str(), loadedTexture.width, loadedTexture.height);
                                 }
                             }
                             {
@@ -98,8 +101,10 @@ namespace parks {
                    !TextureLoader.loadedTextures.empty()) {
                 LoadedTexture texture;
                 {
-                    if (TextureLoader.loadedTextures.empty())
+                    if (TextureLoader.loadedTextures.empty()) {
+                        std::this_thread::sleep_for(std::chrono::milliseconds(10));
                         continue;
+                    }
                     std::scoped_lock<std::mutex> loadQueueLock{TextureLoader.glLoadQueueMutex};
                     texture = TextureLoader.loadedTextures.front();
                     TextureLoader.loadedTextures.pop();
@@ -112,6 +117,7 @@ namespace parks {
                 glGenerateMipmap(GL_TEXTURE_2D);
                 TextureLoader.gl2DTextures[texture.textureName] = texture2D;
                 stbi_image_free(texture.data);
+                BLT_TRACE("Loaded texture '%s' to graphics card!", texture.textureName.c_str());
             }
         } catch (const std::exception& e){
             BLT_ERROR("Exception was caught in texture -> gl load loop!");

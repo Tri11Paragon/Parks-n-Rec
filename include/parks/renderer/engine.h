@@ -10,7 +10,9 @@
 #include "blt/math/vectors.h"
 #include "parks/config.h"
 #include <parks/shader/basic_shader.vert>
+#include <parks/shader/ui_shader.vert>
 #include <parks/shader/basic_shader.frag>
+#include <parks/shader/ui_shader.frag>
 #include <parks/renderer/player.h>
 
 namespace parks {
@@ -40,10 +42,25 @@ namespace parks {
             1, 2, 3 // Second Triangle
     };
     
+    static GLfloat basicQuad_v[] = {
+            // Positions // Texture Coords
+            1, 1, 0.0f, 1.0f, 1.0f, // Top Right
+            1, 0, 0.0f, 1.0f, 0.0f, // Bottom Right
+            0, 0, 0.0f, 0.0f, 0.0f, // Bottom Left
+            0, 1, 0.0f, 0.0f, 1.0f // Top Left
+    };
+    static GLuint basicQuad_i[] = { // Note that we start from 0!
+            0, 1, 3, // First Triangle
+            1, 2, 3 // Second Triangle
+    };
+    
     class Engine {
         private:
             Shader testShader{BasicShaderVertex, BasicShaderFragment};
+            Shader uiShader{UIShaderVertex, UIShaderFragment};
             VAOStorageObject vao;
+            VAOStorageObject basicQuadVAO;
+            GLTexture2D geneticImageTexture;
             const Settings& settings;
             
             Player player;

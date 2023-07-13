@@ -57,6 +57,7 @@ namespace parks {
         blt::mat4x4 viewMatrix;
         blt::mat4x4 perspectiveMatrix;
         blt::mat4x4 pvMatrix;
+        blt::mat4x4 orthoMatrix;
         GLuint uboID = 0;
     } Matrices;
     
@@ -120,7 +121,9 @@ namespace parks {
                     windowSize.height = height;
                     glViewport(0, 0, width, height);
                     auto pers = blt::perspective(90, (float) width / (float) height, 0.1f, 500.0f);
+                    auto ortho = blt::ortho(0, (float)width, 0, (float)height, -1, 1);
                     Window::updatePerspectiveMatrix(pers);
+                    Window::updateOrthograhpicMatrix(ortho);
                 }
         );
         
@@ -155,7 +158,7 @@ namespace parks {
     void setupSharedWindowMatrices() {
         glGenBuffers(1, &Matrices.uboID);
         glBindBuffer(GL_UNIFORM_BUFFER, Matrices.uboID);
-        glBufferData(GL_UNIFORM_BUFFER, sizeof(blt::mat4x4) * 3, nullptr, GL_STATIC_DRAW);
+        glBufferData(GL_UNIFORM_BUFFER, sizeof(blt::mat4x4) * parks::Window::UBO_MATRICES_COUNT, nullptr, GL_STATIC_DRAW);
         glBindBufferBase(GL_UNIFORM_BUFFER, 0, Matrices.uboID);
         glBindBuffer(GL_UNIFORM_BUFFER, 0);
     }
@@ -219,7 +222,6 @@ namespace parks {
     }
     
     void Window::postUpdate() {
-        ImGui::ShowDemoWindow();
         
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -244,6 +246,14 @@ namespace parks {
         glBufferSubData(
                 GL_UNIFORM_BUFFER, sizeof(blt::mat4x4) * 2, sizeof(blt::mat4x4),
                 Matrices.pvMatrix.ptr());
+        glBindBuffer(GL_UNIFORM_BUFFER, 0);
+    }
+    
+    void Window::updateOrthograhpicMatrix(const blt::mat4x4& perspective) {
+        Matrices.orthoMatrix = perspective;
+        glBindBuffer(GL_UNIFORM_BUFFER, Matrices.uboID);
+        glBufferSubData(
+                GL_UNIFORM_BUFFER, sizeof(blt::mat4x4) * 3, sizeof(blt::mat4x4), Matrices.orthoMatrix.ptr());
         glBindBuffer(GL_UNIFORM_BUFFER, 0);
     }
     

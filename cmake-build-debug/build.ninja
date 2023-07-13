@@ -147,6 +147,13 @@ build CMakeFiles/parksnrec.dir/src/parks/window.cpp.o: CXX_COMPILER__parksnrec_u
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/parks
 
+build CMakeFiles/parksnrec.dir/src/perlin.cpp.o: CXX_COMPILER__parksnrec_unscanned_Debug /home/brett/git/parksandrec/src/perlin.cpp || cmake_object_order_depends_target_parksnrec
+  DEP_FILE = CMakeFiles/parksnrec.dir/src/perlin.cpp.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-debug/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-debug/libs/assimp/code/../include
+  OBJECT_DIR = CMakeFiles/parksnrec.dir
+  OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target parksnrec
@@ -155,7 +162,7 @@ build CMakeFiles/parksnrec.dir/src/parks/window.cpp.o: CXX_COMPILER__parksnrec_u
 #############################################
 # Link the executable parksnrec
 
-build parksnrec: CXX_EXECUTABLE_LINKER__parksnrec_Debug CMakeFiles/parksnrec.dir/src/imgui/imgui.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_demo.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_draw.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_impl_glfw.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_impl_opengl3.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_tables.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_widgets.cpp.o CMakeFiles/parksnrec.dir/src/parks/app.cpp.o CMakeFiles/parksnrec.dir/src/parks/main.cpp.o CMakeFiles/parksnrec.dir/src/parks/renderer/OpenGL.cpp.o CMakeFiles/parksnrec.dir/src/parks/renderer/engine.cpp.o CMakeFiles/parksnrec.dir/src/parks/renderer/player.cpp.o CMakeFiles/parksnrec.dir/src/parks/renderer/resources.cpp.o CMakeFiles/parksnrec.dir/src/parks/window.cpp.o | libs/glfw/glfw-3.3.8/src/libglfw3d.a libs/BLT/libBLTd.a libs/assimp/lib/libassimp.a /usr/lib/librt.a /usr/lib/libm.so /usr/lib/libX11.so /usr/lib/libz.so libs/assimp/contrib/zlib/libzlibstatic.a || libs/BLT/libBLTd.a libs/assimp/contrib/zlib/libzlibstatic.a libs/assimp/lib/libassimp.a libs/glfw/glfw-3.3.8/src/libglfw3d.a
+build parksnrec: CXX_EXECUTABLE_LINKER__parksnrec_Debug CMakeFiles/parksnrec.dir/src/imgui/imgui.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_demo.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_draw.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_impl_glfw.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_impl_opengl3.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_tables.cpp.o CMakeFiles/parksnrec.dir/src/imgui/imgui_widgets.cpp.o CMakeFiles/parksnrec.dir/src/parks/app.cpp.o CMakeFiles/parksnrec.dir/src/parks/main.cpp.o CMakeFiles/parksnrec.dir/src/parks/renderer/OpenGL.cpp.o CMakeFiles/parksnrec.dir/src/parks/renderer/engine.cpp.o CMakeFiles/parksnrec.dir/src/parks/renderer/player.cpp.o CMakeFiles/parksnrec.dir/src/parks/renderer/resources.cpp.o CMakeFiles/parksnrec.dir/src/parks/window.cpp.o CMakeFiles/parksnrec.dir/src/perlin.cpp.o | libs/glfw/glfw-3.3.8/src/libglfw3d.a libs/BLT/libBLTd.a libs/assimp/lib/libassimp.a /usr/lib/librt.a /usr/lib/libm.so /usr/lib/libX11.so /usr/lib/libz.so libs/assimp/contrib/zlib/libzlibstatic.a || libs/BLT/libBLTd.a libs/assimp/contrib/zlib/libzlibstatic.a libs/assimp/lib/libassimp.a libs/glfw/glfw-3.3.8/src/libglfw3d.a
   FLAGS = -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = libs/glfw/glfw-3.3.8/src/libglfw3d.a  libs/BLT/libBLTd.a  -lOpenGL  libs/assimp/lib/libassimp.a  -Wl,-Bstatic  -lrt  -Wl,-Bdynamic  -lm  -ldl  -lX11  /usr/lib/libz.so  libs/assimp/contrib/zlib/libzlibstatic.a  -lrt
@@ -273,6 +280,13 @@ build libs/BLT/CMakeFiles/BLT.dir/src/blt/std/logging.cpp.o: CXX_COMPILER__BLT_u
   OBJECT_DIR = libs/BLT/CMakeFiles/BLT.dir
   OBJECT_FILE_DIR = libs/BLT/CMakeFiles/BLT.dir/src/blt/std
 
+build libs/BLT/CMakeFiles/BLT.dir/src/blt/std/string.cpp.o: CXX_COMPILER__BLT_unscanned_Debug /home/brett/git/parksandrec/libs/BLT/src/blt/std/string.cpp || cmake_object_order_depends_target_BLT
+  DEP_FILE = libs/BLT/CMakeFiles/BLT.dir/src/blt/std/string.cpp.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  INCLUDES = -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-debug/libs/BLT/config
+  OBJECT_DIR = libs/BLT/CMakeFiles/BLT.dir
+  OBJECT_FILE_DIR = libs/BLT/CMakeFiles/BLT.dir/src/blt/std
+
 build libs/BLT/CMakeFiles/BLT.dir/src/blt/std/system.cpp.o: CXX_COMPILER__BLT_unscanned_Debug /home/brett/git/parksandrec/libs/BLT/src/blt/std/system.cpp || cmake_object_order_depends_target_BLT
   DEP_FILE = libs/BLT/CMakeFiles/BLT.dir/src/blt/std/system.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
@@ -309,7 +323,7 @@ build libs/BLT/CMakeFiles/BLT.dir/src/blt/nbt/nbt_block.cpp.o: CXX_COMPILER__BLT
 #############################################
 # Link the static library libs/BLT/libBLTd.a
 
-build libs/BLT/libBLTd.a: CXX_STATIC_LIBRARY_LINKER__BLT_Debug libs/BLT/CMakeFiles/BLT.dir/src/blt/std/filesystem.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/std/format.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/std/loader.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/std/logging.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/std/system.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/profiling/profiler.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/nbt/nbt.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/nbt/nbt_block.cpp.o
+build libs/BLT/libBLTd.a: CXX_STATIC_LIBRARY_LINKER__BLT_Debug libs/BLT/CMakeFiles/BLT.dir/src/blt/std/filesystem.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/std/format.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/std/loader.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/std/logging.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/std/string.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/std/system.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/profiling/profiler.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/nbt/nbt.cpp.o libs/BLT/CMakeFiles/BLT.dir/src/blt/nbt/nbt_block.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = libs/BLT/CMakeFiles/BLT.dir
   POST_BUILD = :

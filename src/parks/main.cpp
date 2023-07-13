@@ -20,11 +20,11 @@ int main(){
     resources::loadTexture("/home/brett/git/parksandrec/resources/textures/test.png", "test.png");
 
     Window::create(settings);
-    Window::setMouseVisible(false);
     
     resources::beginLoading();
 
     parks::Engine gameEngine(settings);
+    //Window::setMouseVisible(false);
     gameEngine.run();
     
     resources::cleanup();
