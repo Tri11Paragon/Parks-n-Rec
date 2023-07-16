@@ -1,0 +1,96 @@
+[18:44:20] [app.h:86] [BLT_TRACE]: Setting property information (1)
+[18:44:20] [app.h:87] [BLT_TRACE]: Values size / capacity (before): 0/0
+[18:44:20] [app.h:89] [BLT_TRACE]: Property: 1, Value: 1443248384 (Setting)
+[18:44:20] [app.h:93] [BLT_TRACE]: Values size / capacity (after): 2/2
+[18:44:20] [app.h:95] [BLT_TRACE]: Dumping values:
+[18:44:20] [app.h:96] [BLT_TRACE]: ---------------------
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (0): 0
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (1): 1443248384
+[18:44:20] [app.h:99] [BLT_TRACE]: ---------------------
+[18:44:20] [app.h:86] [BLT_TRACE]: Setting property information (2)
+[18:44:20] [app.h:87] [BLT_TRACE]: Values size / capacity (before): 2/2
+[18:44:20] [app.h:89] [BLT_TRACE]: Property: 2, Value: 1443251136 (Setting)
+[18:44:20] [app.h:93] [BLT_TRACE]: Values size / capacity (after): 4/4
+[18:44:20] [app.h:95] [BLT_TRACE]: Dumping values:
+[18:44:20] [app.h:96] [BLT_TRACE]: ---------------------
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (0): 0
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (1): 1443248384
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (2): 1443251136
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (3): 0
+[18:44:20] [app.h:99] [BLT_TRACE]: ---------------------
+[18:44:20] [app.h:86] [BLT_TRACE]: Setting property information (3)
+[18:44:20] [app.h:87] [BLT_TRACE]: Values size / capacity (before): 4/4
+[18:44:20] [app.h:89] [BLT_TRACE]: Property: 3, Value: 1443250752 (Setting)
+[18:44:20] [app.h:93] [BLT_TRACE]: Values size / capacity (after): 4/4
+[18:44:20] [app.h:95] [BLT_TRACE]: Dumping values:
+[18:44:20] [app.h:96] [BLT_TRACE]: ---------------------
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (0): 0
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (1): 1443248384
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (2): 1443251136
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (3): 1443250752
+[18:44:20] [app.h:99] [BLT_TRACE]: ---------------------
+[18:44:20] [app.h:86] [BLT_TRACE]: Setting property information (0)
+[18:44:20] [app.h:87] [BLT_TRACE]: Values size / capacity (before): 4/4
+[18:44:20] [app.h:89] [BLT_TRACE]: Property: 0, Value: 1443261952 (Setting)
+[18:44:20] [app.h:93] [BLT_TRACE]: Values size / capacity (after): 4/4
+[18:44:20] [app.h:95] [BLT_TRACE]: Dumping values:
+[18:44:20] [app.h:96] [BLT_TRACE]: ---------------------
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (0): 1443261952
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (1): 1443248384
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (2): 1443251136
+[18:44:20] [app.h:98] [BLT_TRACE]: Value (3): 1443250752
+[18:44:20] [app.h:99] [BLT_TRACE]: ---------------------
+[18:44:20] [resources.cpp:142] [BLT_INFO]:  Using 16 threads to load resources!
+[18:44:20] [resources.cpp:41] [BLT_TRACE]: Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[18:44:20] [window.cpp:72] [BLT_TRACE]: Complied with GLFW 3.3.8
+[18:44:20] [window.cpp:80] [BLT_DEBUG]: Using GLFW 3.3.8
+[18:44:20] [window.cpp:196] [BLT_INFO]:  Loaded OpenGL 4.6
+[18:44:20] [resources.cpp:54] [BLT_DEBUG]: Beginning loading of resources
+[18:44:20] [resources.cpp:82] [BLT_TRACE]: Loaded texture 'test.png' with width/height: (1920, 1009)
+[18:44:20] [resources.cpp:120] [BLT_TRACE]: Loaded texture 'test.png' to graphics card!
+[18:44:20] [resources.cpp:138] [BLT_INFO]:  All resources have been loaded. A total of 1 textures!
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.795575, 0.801115, 0.782571) Value: 1.373733 @ 0,26, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.787536, 0.756266, 0.445146) Value: 1.179113 @ 0,27, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.763165, 0.760018, 0.742259) Value: 1.308050 @ 0,28, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.596098, 0.802771, 0.803864) Value: 1.282954 @ 0,29, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.752860, 0.764570, 0.799249) Value: 1.337970 @ 0,30, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.820853, 0.807951, 0.493580) Value: 1.253079 @ 0,31, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.740820, 0.523170, 0.842369) Value: 1.237783 @ 0,32, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.437812, 0.751856, 0.660647) Value: 1.092438 @ 0,33, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.768522, 0.488548, 0.451145) Value: 1.016286 @ 0,34, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.442879, 0.466897, 0.567033) Value: 0.857707 @ 0,88, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.794898, 0.834145, 0.567058) Value: 1.284217 @ 0,89, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.451163, 0.825562, 0.547273) Value: 1.088397 @ 0,90, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.767747, 0.608306, 0.776319) Value: 1.249858 @ 0,91, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.429759, 0.549041, 0.774064) Value: 1.041784 @ 0,92, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.532718, 0.742880, 0.805141) Value: 1.218159 @ 0,93, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.802844, 0.801765, 0.764406) Value: 1.368102 @ 0,94, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.768684, 0.792907, 0.816536) Value: 1.373429 @ 0,95, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.774544, 0.803714, 0.801753) Value: 1.374293 @ 0,151, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.767431, 0.803840, 0.837069) Value: 1.391328 @ 0,152, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.404298, 0.568683, 0.789217) Value: 1.053433 @ 0,153, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.802534, 0.787930, 0.451950) Value: 1.212087 @ 0,154, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.803126, 0.744745, 0.814499) Value: 1.364942 @ 0,155, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.521654, 0.763383, 0.639327) Value: 1.124107 @ 0,156, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.515750, 0.797838, 0.799480) Value: 1.241657 @ 0,157, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.803317, 0.814880, 0.802103) Value: 1.397396 @ 0,158, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.833019, 0.539106, 0.681299) Value: 1.203630 @ 0,159, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.613939, 0.651056, 0.792490) Value: 1.195339 @ 0,216, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.839401, 0.626993, 0.481544) Value: 1.153083 @ 0,217, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.758097, 0.680067, 0.833492) Value: 1.316021 @ 0,218, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.832367, 0.837780, 0.780451) Value: 1.415561 @ 0,219, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.760430, 0.842367, 0.454807) Value: 1.222573 @ 0,220, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.812208, 0.802168, 0.682708) Value: 1.330130 @ 0,221, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.514251, 0.802598, 0.660076) Value: 1.159447 @ 0,222, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.726110, 0.705653, 0.469102) Value: 1.115902 @ 0,223, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.392919, 0.795072, 0.757757) Value: 1.166500 @ 0,224, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.582369, 0.793156, 0.743826) Value: 1.233502 @ 0,296, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.745029, 0.421466, 0.754498) Value: 1.141038 @ 0,297, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.410278, 0.503476, 0.832379) Value: 1.055780 @ 0,298, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.435383, 0.613234, 0.798028) Value: 1.096569 @ 0,299, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.808260, 0.803053, 0.746997) Value: 1.362418 @ 0,300, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.806902, 0.713873, 0.834006) Value: 1.362451 @ 0,301, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.752385, 0.784304, 0.789913) Value: 1.343569 @ 0,302, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.394399, 0.710371, 0.839586) Value: 1.168367 @ 0,303, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.803549, 0.806017, 0.839996) Value: 1.414549 @ 0,304, adj: 0, 0, 0
+[18:44:24] [engine.cpp:87] [BLT_TRACE]: (0.796930, 0.746570, 0.749644) Value: 1.324549 @ 0,305, adj: 0, 0, 0

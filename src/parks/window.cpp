@@ -5,6 +5,7 @@
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
+#include <imgui_spectrum.h>
 #include <blt/std/time.h>
 
 namespace parks {
@@ -204,8 +205,10 @@ namespace parks {
         io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
         
         // Setup Dear ImGui style
-        ImGui::StyleColorsDark();
+        //ImGui::StyleColorsDark();
         //ImGui::StyleColorsLight();
+        ImGui::Spectrum::StyleColorsSpectrum();
+        ImGui::Spectrum::LoadFont(16);
         
         // Setup Platform/Renderer backends
         ImGui_ImplGlfw_InitForOpenGL(window, true);

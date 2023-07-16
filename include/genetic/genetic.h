@@ -10,6 +10,8 @@
 #include <ImNodes.h>
 #include "ImNodesEz.h"
 #include <queue>
+#include <blt/profiling/profiler.h>
+#include <unordered_set>
 
 namespace parks::genetic {
     
@@ -20,20 +22,56 @@ namespace parks::genetic {
     
     class OperatorSet {
         private:
+            std::unordered_set<Operators> hasOperators;
             std::vector<Operator*> operators;
-        public:
-            OperatorSet() = default;
-            
-            void add(Operator* op){
-                operators.push_back(op);
+            template <typename E>
+            constexpr typename std::underlying_type<E>::type to_underlying(E e) noexcept {
+                return static_cast<typename std::underlying_type<E>::type>(e);
             }
+            void set(Operators code, Operator* op){
+                operators[to_underlying(code)] = (op);
+                hasOperators.insert(code);
+            }
+        public:
+            OperatorSet() {
+                operators.reserve(sizeof(operatorInfo) / sizeof(OperatorProperties));
+                set(Operators::X, new XOperator);
+                set(Operators::Y, new YOperator);
+                //set(Operators::Zero, new ZeroOperator);
+                //set(Operators::One, new OneOperator);
+                
+                set(Operators::Multiplication, new MultiplicationOperator);
+                set(Operators::Addition, new AdditionOperator);
+                set(Operators::Subtraction, new SubtractionOperator);
+                set(Operators::Modulo, new ModOperator);
+                set(Operators::Min, new MinOperator);
+                set(Operators::Max, new MaxOperator);
+                set(Operators::Log, new LogOperator);
+                set(Operators::PerlinBW, new PerlinBWOperator);
+                set(Operators::PerlinColor, new PerlinColorOperator);
+                set(Operators::PerlinRidge, new PerlinRidgeOperator);
+                set(Operators::PerlinFBM, new PerlinFBMOperator);
+                set(Operators::PerlinTurbulence, new PerlinTurbulenceOperator);
+                set(Operators::ColorNoise, new ColorNoiseOperator);
+            };
             
             Operator* operator[](int index) const {
                 return operators[index];
             }
             
-            [[nodiscard]] size_t size() const {
-                return operators.size();
+            [[nodiscard]] int randomOperator(){
+                auto begin = hasOperators.begin();
+                std::advance(begin, randomInt(0, (int)hasOperators.size()));
+                return to_underlying(*begin);
+            }
+            
+            [[nodiscard]] int randomBaseOperator() {
+                const Operators base[] = {
+                    Operators::X,
+                    Operators::Y,
+                    //Operators::ColorNoise
+                };
+                return to_underlying(base[randomInt(0, sizeof(base) / sizeof(Operators))]);
             }
             
             ~OperatorSet(){
@@ -73,11 +111,19 @@ namespace parks::genetic {
             Color apply(double x, double y, unsigned int time){
                 Color left_v(0);
                 Color right_v(0);
-                if (left != nullptr)
+                int argCount = 0;
+                if (left != nullptr) {
                     left_v = left->apply(x, y, time);
-                if (right != nullptr)
+                    argCount |= 0x2;
+                }
+                if (right != nullptr) {
+                    argCount |= 0x1;
                     right_v = right->apply(x, y, time);
-                return set[op]->apply(x, y, time, left_v, right_v);
+                }
+                
+                OperatorArguments args{x, y, time, argCount, left_v, right_v};
+
+                return set[op]->apply(args);;
             }
             
             ~Node() {
@@ -105,7 +151,7 @@ namespace parks::genetic {
             std::vector<ImNode_t> nodes;
             
             Node* constructLeaf(){
-                return new Node(set, randomInt(0, 2), nullptr, nullptr);
+                return new Node(set, set.randomBaseOperator(), nullptr, nullptr);
             }
             
             Node* constructTree(int depth) {
@@ -114,8 +160,12 @@ namespace parks::genetic {
                     return constructLeaf();
                 if (randomInt(0, 100) == 0)
                     return constructLeaf();
-                return new Node(set, randomInt(0, (int)set.size()), constructTree(depth - 1),
-                                constructTree(depth - 1));
+                auto opcode = set.randomOperator();
+                auto acceptsInput = operatorInfo[opcode].acceptsInput;
+                auto hasLeftSubtree = acceptsInput & 0x2;
+                auto hasRightSubtree = acceptsInput & 0x1;
+                return new Node(set, opcode, hasLeftSubtree ? constructTree(depth - 1) : nullptr,
+                                hasRightSubtree ? constructTree(depth - 1) : nullptr);
             }
             
             int heightInternal(Node* parent){
@@ -164,28 +214,14 @@ namespace parks::genetic {
             }
         public:
             Program(){
-                set.add(new XOperator);
-                set.add(new YOperator);
-                set.add(new ZeroOperator);
-                set.add(new OneOperator);
-                
-                set.add(new MultiplicationOperator);
-                set.add(new AdditionOperator);
-                set.add(new SubtractionOperator);
-//                set.add(new ModOperator);
-//                set.add(new MinOperator);
-//                set.add(new MaxOperator);
-//                set.add(new LogOperator);
-                set.add(new PerlinBWOperator);
-                set.add(new PerlinColorOperator);
-                set.add(new PerlinRidgeOperator);
-                set.add(new PerlinFBMOperator);
-                set.add(new PerlinTurbulenceOperator);
-                set.add(new ColorNoiseOperator);
                 
                 //auto numberOfNodes = randomInt(10, 10);
                 
                 root = constructTree(7);
+//                root = new Node(set, (int)Operators::PerlinColor, new Node(set, (int)Operators::X,
+//                                                                           nullptr, nullptr), new Node(set, (int)Operators::Y,
+//                                                                                                       nullptr,
+//                                                                                                       nullptr));
                 
                 constructNodeList();
 //                root = new Node(set, 12, new Node(set, 5, new Node(set, 16, nullptr, nullptr), new Node(set, 0,
@@ -214,7 +250,7 @@ namespace parks::genetic {
                     
                     for (ImNode_t& node : nodes)
                     {
-                        if (ImNodes::Ez::BeginNode(&node, ("D: " + std::to_string(node.depth) + " | " + std::to_string(node.index) + " : " + set[node.opCode]->opString).c_str(), &node.pos, &node.selected))
+                        if (ImNodes::Ez::BeginNode(&node, ("D: " + std::to_string(node.depth) + " | " + std::to_string(node.index) + " : " + operatorInfo[node.opCode].opCode).c_str(), &node.pos, &node.selected))
                         {
                             ImNodes::Ez::InputSlots(node.inputs, 1);
                             ImNodes::Ez::OutputSlots(node.outputs, 2);
