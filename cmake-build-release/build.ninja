@@ -51,126 +51,126 @@ build cmake_object_order_depends_target_parksnrec: phony || cmake_object_order_d
 
 build CMakeFiles/parksnrec.dir/src/imgui/ImNodes.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/imgui/ImNodes.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/imgui/ImNodes.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/imgui
 
 build CMakeFiles/parksnrec.dir/src/imgui/ImNodesEz.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/imgui/ImNodesEz.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/imgui/ImNodesEz.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/imgui
 
 build CMakeFiles/parksnrec.dir/src/imgui/imgui.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/imgui/imgui.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/imgui/imgui.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/imgui
 
 build CMakeFiles/parksnrec.dir/src/imgui/imgui_demo.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/imgui/imgui_demo.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/imgui/imgui_demo.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/imgui
 
 build CMakeFiles/parksnrec.dir/src/imgui/imgui_draw.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/imgui/imgui_draw.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/imgui/imgui_draw.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/imgui
 
 build CMakeFiles/parksnrec.dir/src/imgui/imgui_impl_glfw.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/imgui/imgui_impl_glfw.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/imgui/imgui_impl_glfw.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/imgui
 
 build CMakeFiles/parksnrec.dir/src/imgui/imgui_impl_opengl3.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/imgui/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/imgui/imgui_impl_opengl3.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/imgui
 
 build CMakeFiles/parksnrec.dir/src/imgui/imgui_spectrum.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/imgui/imgui_spectrum.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/imgui/imgui_spectrum.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/imgui
 
 build CMakeFiles/parksnrec.dir/src/imgui/imgui_tables.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/imgui/imgui_tables.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/imgui/imgui_tables.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/imgui
 
 build CMakeFiles/parksnrec.dir/src/imgui/imgui_widgets.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/imgui/imgui_widgets.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/imgui/imgui_widgets.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/imgui
 
 build CMakeFiles/parksnrec.dir/src/parks/app.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/parks/app.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/parks/app.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/parks
 
 build CMakeFiles/parksnrec.dir/src/parks/main.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/parks/main.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/parks/main.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/parks
 
 build CMakeFiles/parksnrec.dir/src/parks/renderer/OpenGL.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/parks/renderer/OpenGL.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/parks/renderer/OpenGL.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/parks/renderer
 
 build CMakeFiles/parksnrec.dir/src/parks/renderer/engine.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/parks/renderer/engine.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/parks/renderer/engine.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/parks/renderer
 
 build CMakeFiles/parksnrec.dir/src/parks/renderer/player.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/parks/renderer/player.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/parks/renderer/player.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/parks/renderer
 
 build CMakeFiles/parksnrec.dir/src/parks/renderer/resources.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/parks/renderer/resources.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/parks/renderer/resources.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/parks/renderer
 
 build CMakeFiles/parksnrec.dir/src/parks/window.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/parks/window.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/parks/window.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src/parks
 
 build CMakeFiles/parksnrec.dir/src/perlin.cpp.o: CXX_COMPILER__parksnrec_unscanned_Release /home/brett/git/parksandrec/src/perlin.cpp || cmake_object_order_depends_target_parksnrec
   DEP_FILE = CMakeFiles/parksnrec.dir/src/perlin.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always -Wall -Wextra -Wpedantic
   INCLUDES = -I/home/brett/git/parksandrec/include -I/home/brett/git/parksandrec/libs/glfw/glfw-3.3.8/include -I/home/brett/git/parksandrec/libs/BLT/include -I/home/brett/git/parksandrec/cmake-build-release/libs/BLT/config -I/home/brett/git/parksandrec/libs/assimp/code/../include -I/home/brett/git/parksandrec/cmake-build-release/libs/assimp/code/../include
   OBJECT_DIR = CMakeFiles/parksnrec.dir
   OBJECT_FILE_DIR = CMakeFiles/parksnrec.dir/src

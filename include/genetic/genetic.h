@@ -37,8 +37,8 @@ namespace parks::genetic {
                 operators.reserve(sizeof(operatorInfo) / sizeof(OperatorProperties));
                 set(Operators::X, new XOperator);
                 set(Operators::Y, new YOperator);
-                //set(Operators::Zero, new ZeroOperator);
-                //set(Operators::One, new OneOperator);
+                set(Operators::RandScalar, new RandomScalarOperator);
+                set(Operators::RandColor, new RandomColorOperator);
                 
                 set(Operators::Multiplication, new MultiplicationOperator);
                 set(Operators::Addition, new AdditionOperator);
@@ -55,7 +55,20 @@ namespace parks::genetic {
                 set(Operators::ColorNoise, new ColorNoiseOperator);
             };
             
-            Operator* operator[](int index) const {
+            OperatorSet(OperatorSet& set1, OperatorSet& set2){
+                operators.reserve(sizeof(operatorInfo) / sizeof(OperatorProperties));
+                for (size_t i = 0; i < operators.size(); i++)
+                    set((Operators)i, operators[i]->breed(set2[i]));
+                
+            }
+            
+            OperatorSet& mutate(){
+                for (auto& o : operators)
+                    if (chance(50))
+                        o->mutate();
+            }
+            
+            Operator* operator[](size_t index) const {
                 return operators[index];
             }
             
@@ -69,7 +82,8 @@ namespace parks::genetic {
                 const Operators base[] = {
                     Operators::X,
                     Operators::Y,
-                    //Operators::ColorNoise
+                    //Operators::RandColor,
+                    //Operators::RandScalar
                 };
                 return to_underlying(base[randomInt(0, sizeof(base) / sizeof(Operators))]);
             }
@@ -158,7 +172,7 @@ namespace parks::genetic {
                 // TODO: remove magic numbers!
                 if (depth == 0)
                     return constructLeaf();
-                if (randomInt(0, 100) == 0)
+                if (chance(5))
                     return constructLeaf();
                 auto opcode = set.randomOperator();
                 auto acceptsInput = operatorInfo[opcode].acceptsInput;
@@ -166,6 +180,16 @@ namespace parks::genetic {
                 auto hasRightSubtree = acceptsInput & 0x1;
                 return new Node(set, opcode, hasLeftSubtree ? constructTree(depth - 1) : nullptr,
                                 hasRightSubtree ? constructTree(depth - 1) : nullptr);
+            }
+            
+            Node* copyTree(Node* root) {
+                Node* left = nullptr;
+                Node* right = nullptr;
+                if (root->left != nullptr)
+                    left = copyTree(root->left);
+                if (root->right != nullptr)
+                    right = copyTree(root->right);
+                return new Node(set, root->op, left, right);
             }
             
             int heightInternal(Node* parent){
@@ -212,17 +236,71 @@ namespace parks::genetic {
                     depth++;
                 }
             }
+            Program(Program* program1, Program* program2){
+                set = OperatorSet{program1->set, program2->set};
+                
+                root = copyTree(program1->root);
+                
+                // 1 point crossover for now
+                
+                Node* search = root;
+                Node* parent = root;
+                if (chance(50))
+                    search = search->left;
+                else
+                    search = search->right;
+                while (true){
+                    if (search->left != nullptr) {
+                        if (chance(50)) {
+                            parent = search;
+                            search = search->left;
+                        }
+                    }
+                    if (search->right != nullptr) {
+                        if (chance(50)) {
+                            parent = search;
+                            search = search->right;
+                        }
+                    }
+                    if ((chance(25) && search != parent) || (search->left == nullptr && search->right == nullptr))
+                        break;
+                }
+                
+                Node* replace = program2->root;
+                while (true){
+                    if (replace->left != nullptr) {
+                        if (chance(50))
+                            replace = replace->left;
+                    }
+                    if (replace->right != nullptr) {
+                        if (chance(50))
+                            replace = replace->right;
+                    }
+                    if (chance(25) || (replace->left == nullptr && replace->right == nullptr))
+                        break;
+                }
+                
+                if (parent->left == search){
+                    delete parent->left;
+                    parent->left = copyTree(replace);
+                } else {
+                    delete parent->right;
+                    parent->right = copyTree(replace);
+                }
+                
+                constructNodeList();
+            }
         public:
             Program(){
-                
-                //auto numberOfNodes = randomInt(10, 10);
-                
                 root = constructTree(7);
+                //root = new Node(set, (int)Operators::ColorNoise, nullptr, nullptr);
+//                root = new Node(set, (int)Operators::Multiplication, new Node(set, (int)Operators::X,
+//                                                                        nullptr, nullptr), new Node(set, (int)Operators::Y,
+//                                                                                                    nullptr, nullptr));
 //                root = new Node(set, (int)Operators::PerlinColor, new Node(set, (int)Operators::X,
 //                                                                           nullptr, nullptr), new Node(set, (int)Operators::Y,
 //                                                                                                       nullptr,
 //                                                                                                       nullptr));
-                
                 constructNodeList();
 //                root = new Node(set, 12, new Node(set, 5, new Node(set, 16, nullptr, nullptr), new Node(set, 0,
 //                                                                                                        nullptr,
@@ -230,8 +308,10 @@ namespace parks::genetic {
 //                                new Node(set, 5, new Node(set, 16, nullptr, nullptr), new Node(set, 1,
 //                                                                                               nullptr,
 //                                                                                               nullptr)));
+            }
             
-            
+            Program* crossover(Program* program){
+                return new Program(this, program);
             }
             
             int getHeight(){

@@ -60,11 +60,14 @@ namespace parks {
                             stbi_set_flip_vertically_on_load_thread(true);
                             while (!TextureLoader.texturesToLoad.empty()) {
                                 LoadableTexture texture;
-                                {
+                                try {
                                     std::scoped_lock<std::mutex> textureQueueLock{
                                             TextureLoader.textureQueueMutex};
                                     texture = TextureLoader.texturesToLoad.front();
                                     TextureLoader.texturesToLoad.pop();
+                                } catch (std::exception& e){
+                                    BLT_ERROR("Failed to fetch texture: %s", e.what());
+                                    continue;
                                 }
                                 if (texture.path.empty())
                                     continue;
@@ -75,11 +78,14 @@ namespace parks {
                                 );
                                 loadedTexture.channels = 4;
                                 loadedTexture.textureName = texture.name;
-                                {
+                                try {
                                     std::scoped_lock<std::mutex> loadQueueLock{
                                             TextureLoader.glLoadQueueMutex};
                                     TextureLoader.loadedTextures.push(loadedTexture);
                                     BLT_TRACE("Loaded texture '%s' with width/height: (%d, %d)", loadedTexture.textureName.c_str(), loadedTexture.width, loadedTexture.height);
+                                } catch (std::exception& e){
+                                    BLT_ERROR("Failed to push loaded texture: %s", e.what());
+                                    continue;
                                 }
                             }
                             {
