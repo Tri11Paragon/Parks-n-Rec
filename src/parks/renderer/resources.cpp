@@ -55,7 +55,7 @@ namespace parks {
         stbi_set_flip_vertically_on_load(true);
         for (int i = 0; i < TextureLoader.numThreads; i++) {
             TextureLoader.threads[i] = new std::thread(
-                    []() -> void {
+                    [i]() -> void {
                         try {
                             stbi_set_flip_vertically_on_load_thread(true);
                             while (!TextureLoader.texturesToLoad.empty()) {
@@ -63,6 +63,8 @@ namespace parks {
                                 try {
                                     std::scoped_lock<std::mutex> textureQueueLock{
                                             TextureLoader.textureQueueMutex};
+                                    if (TextureLoader.texturesToLoad.empty())
+                                        break;
                                     texture = TextureLoader.texturesToLoad.front();
                                     TextureLoader.texturesToLoad.pop();
                                 } catch (std::exception& e){
@@ -71,6 +73,7 @@ namespace parks {
                                 }
                                 if (texture.path.empty())
                                     continue;
+                                BLT_TRACE("Processing Texture %s", texture.path.c_str());
                                 LoadedTexture loadedTexture;
                                 loadedTexture.data = stbi_load(
                                         texture.path.c_str(), &loadedTexture.width,
@@ -92,7 +95,7 @@ namespace parks {
                                 std::scoped_lock<std::mutex> threadSyncLock(
                                         TextureLoader.threadSyncMutex
                                 );
-                                TextureLoader.finishedThreads++;
+                                TextureLoader.finishedThreads += 1;
                             }
                         } catch (const std::exception& e) {
                             BLT_ERROR("An error has been detected in the loader thread loop!");
@@ -108,7 +111,7 @@ namespace parks {
                 LoadedTexture texture;
                 {
                     if (TextureLoader.loadedTextures.empty()) {
-                        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+                        std::this_thread::sleep_for(std::chrono::milliseconds(50));
                         continue;
                     }
                     std::scoped_lock<std::mutex> loadQueueLock{TextureLoader.glLoadQueueMutex};

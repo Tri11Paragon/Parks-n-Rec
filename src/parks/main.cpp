@@ -15,13 +15,13 @@ int main(){
     settings.setProperty(Properties::WINDOW_TITLE, new Properties::Value<std::string>("So You Think You Can Park?"));
     
     // TODO: poll hardware
-    //resources::init(16);
+    resources::init(16);
     // TODO local
-    //resources::loadTexture("/home/brett/git/parksandrec/resources/textures/test.png", "test.png");
+    resources::loadTexture("/home/brett/git/parksandrec/resources/textures/test.png", "test.png");
 
     Window::create(settings);
     
-    //resources::beginLoading();
+    resources::beginLoading();
 
     parks::Engine gameEngine(settings);
     //Window::setMouseVisible(false);

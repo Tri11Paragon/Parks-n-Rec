@@ -5,7 +5,7 @@
 #ifndef PARKSNREC_GENETIC_H
 #define PARKSNREC_GENETIC_H
 
-#include <genetic/operators.h>
+#include <genetic/old/operators.h>
 #include <imgui.h>
 #include <ImNodes.h>
 #include "ImNodesEz.h"
@@ -308,6 +308,10 @@ namespace parks::genetic {
 //                                new Node(set, 5, new Node(set, 16, nullptr, nullptr), new Node(set, 1,
 //                                                                                               nullptr,
 //                                                                                               nullptr)));
+            }
+            
+            void mutate(){
+                set.mutate();
             }
             
             Program* crossover(Program* program){

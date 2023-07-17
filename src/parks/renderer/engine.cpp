@@ -3,7 +3,7 @@
 //
 #include "parks/renderer/engine.h"
 #include <imgui.h>
-#include <genetic/genetic.h>
+#include <genetic/old/genetic.h>
 #include <memory>
 #include <blt/profiling/profiler.h>
 #include <thread>
@@ -17,6 +17,7 @@ namespace parks {
     constexpr unsigned int gtChannels = 4;
     
     std::unique_ptr<genetic::Program> p;
+    std::unique_ptr<genetic::Program> c;
     std::unique_ptr<genetic::Program> old;
     std::unique_ptr<genetic::Program> save;
     double values[gtWidth * gtHeight * gtChannels];
@@ -199,7 +200,7 @@ namespace parks {
             
             testShader.bind();
             glActiveTexture(GL_TEXTURE0);
-            //resources::getTexture("test.png")->bind();
+            resources::getTexture("test.png")->bind();
             vao.bind();
             vao.bindEBO();
             glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
@@ -230,6 +231,9 @@ namespace parks {
                     old = std::move(p);
                     p = std::unique_ptr<genetic::Program>(np);
                     BLT_TRACE("cross| np: %d, old: %d, p: %d, save: %d", np, old.get(), p.get(), save.get());
+                }
+                if (ImGui::Button("Mutate")){
+                    p->mutate();
                 }
                 if (ImGui::Button("Save")){
                     save = std::move(p);
@@ -320,6 +324,8 @@ namespace parks {
     Engine::~Engine() {
         running = false;
         for (auto*& t : runningThread) {
+            if (t == nullptr)
+                continue;
             t->join();
             delete t;
         }
