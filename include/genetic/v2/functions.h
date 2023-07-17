@@ -8,6 +8,7 @@
 #include <memory>
 #include <vector>
 #include <genetic/util.h>
+#include <genetic/v2/util.h>
 
 namespace parks::genetic {
     
