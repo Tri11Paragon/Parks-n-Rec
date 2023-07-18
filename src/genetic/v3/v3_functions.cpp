@@ -2,6 +2,7 @@
 // Created by brett on 7/17/23.
 //
 #include <genetic/v3/v3_functions.h>
+#include <stb/stb_perlin.h>
 
 namespace parks::genetic {
     
@@ -47,26 +48,41 @@ namespace parks::genetic {
     }
     
     Color log(OperatorArguments args, const ParameterSet& params) {
-        return Color(0, 0, 0);
+        return Color(std::log(args.left.r), std::log(args.left.g), std::log(args.left.b));
     }
     
     Color sin(OperatorArguments args, const ParameterSet& params) {
-        return Color(0, 0, 0);
+        return Color(std::sin(args.left.r), std::sin(args.left.g), std::sin(args.left.b));
     }
     
     Color cos(OperatorArguments args, const ParameterSet& params) {
-        return Color(0, 0, 0);
+        return Color(std::cos(args.left.r), std::cos(args.left.g), std::cos(args.left.b));
     }
     
     Color atan(OperatorArguments args, const ParameterSet& params) {
-        return Color(0, 0, 0);
+        return Color(std::atan(args.left.r), std::atan(args.left.g), std::atan(args.left.b));
     }
     
+    const float lacunarity = 6;
+    const float octaves = 12;
+    const float gain = 2;
+    const float scale = 1024;
+    
     Color noise(OperatorArguments args, const ParameterSet& params) {
-        return Color(0, 0, 0);
+        float scaleX = (float)args.left.r * (float)params[3].r * scale;
+        float scaleY = (float)args.right.r * (float)params[3].r * scale;
+        
+        return Color(stb_perlin_turbulence_noise3(scaleX, scaleY, 0.52342, (float)params[0].r * lacunarity, (float)params[1].r * gain, (int)std::max(2.0, params[2].r * octaves)));
     }
     
     Color colorNoise(OperatorArguments args, const ParameterSet& params) {
-        return Color(0, 0, 0);
+        float scaleX = (float)args.left.r * (float)params[3].r * scale;
+        float scaleY = (float)args.right.r * (float)params[3].r * scale;
+        
+        float r = stb_perlin_turbulence_noise3(scaleX, scaleY, 0.52342, (float)params[0].r * lacunarity, (float)params[1].r * gain, (int)std::max(2.0, params[2].r * octaves));
+        float g = stb_perlin_turbulence_noise3(scaleX, 0.21045, scaleY, (float)params[0].r * lacunarity, (float)params[1].r * gain, (int)std::max(2.0, params[2].r * octaves));
+        float b = stb_perlin_turbulence_noise3(0.78423, scaleY, scaleX, (float)params[0].r * lacunarity, (float)params[1].r * gain, (int)std::max(2.0, params[2].r * octaves));
+        
+        return Color(r, g, b);
     }
 }

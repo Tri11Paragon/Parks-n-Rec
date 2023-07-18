@@ -33,7 +33,11 @@ namespace parks::genetic {
                 b = b - trunc(b);
         }
         
-        explicit Color(double v): Color(v, v, v) {}
+        explicit Color(double v) {
+            r = v;
+            g = 0;
+            b = 0;
+        }
     };
     
     inline Color normalize(Color c) {
@@ -99,7 +103,7 @@ namespace parks::genetic {
         public:
             ParameterSet() = default;
             
-            const inline Color& operator[](int index){return parameters[index];}
+            inline const Color& operator[](int index) const {return parameters[index];}
             inline size_t size(){return parameters.size();}
             
             void add(Color c) {parameters.push_back(c);}

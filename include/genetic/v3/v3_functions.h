@@ -54,7 +54,6 @@ namespace parks::genetic {
         public:
             Function(std::function<Color(OperatorArguments, ParameterSet)> func, unsigned int requiredScalars, unsigned int requiredColors, unsigned int acceptsArgs): func(std::move(func)), requiredScalars(requiredScalars), requiredColors(requiredColors), acceptsArgs(acceptsArgs) {
             }
-            
             // in the case of single argument, it is provided to the left side!
             [[nodiscard]] inline bool singleArgument() const {
                 return acceptsArgs & ARGS_SINGLE;
@@ -103,22 +102,52 @@ namespace parks::genetic {
             
     };
     
-    std::unordered_map<FunctionID, Function> functions = {
-            {FunctionID::ADD, Function{parks::genetic::add, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::SUBTRACT, Function{parks::genetic::subtract, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::MULTIPLY, Function{parks::genetic::multiply, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::DIVIDE, Function{parks::genetic::divide, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::MOD, Function{parks::genetic::mod, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::ROUND, Function{parks::genetic::round, 0, 0, ARGS_SINGLE | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::MIN, Function{parks::genetic::min, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::MAX, Function{parks::genetic::max, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::ABS, Function{parks::genetic::abs, 0, 0, ARGS_SINGLE | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::LOG, Function{parks::genetic::log, 0, 0, ARGS_SINGLE | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::SIN, Function{parks::genetic::sin, 0, 0, ARGS_SINGLE | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::COS, Function{parks::genetic::cos, 0, 0, ARGS_SINGLE | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::ATAN, Function{parks::genetic::atan, 0, 0, ARGS_SINGLE | ARGS_VARIABLES | ARGS_FUNCS}},
-            {FunctionID::NOISE, Function{parks::genetic::noise, 3, 0, ARGS_NONE}},
-            {FunctionID::COLOR_NOISE, Function{parks::genetic::colorNoise, 3, 0, ARGS_NONE}},
+    class FunctionStorage {
+        private:
+            Function** functions;
+            size_t size = 0;
+        public:
+            FunctionStorage(std::initializer_list<std::pair<FunctionID, Function*>>&& init){
+                size_t max_value = init.size();
+                for (const auto& v : init){
+                    int enumID = (int)v.first;
+                    max_value = std::max(max_value, (size_t)enumID);
+                }
+                functions = new Function*[max_value];
+                
+                for (auto& v : init){
+                    functions[(int)v.first] = v.second;
+                }
+                size = max_value;
+            }
+            
+            [[nodiscard]] const Function& operator[](FunctionID id) const {
+                return *functions[(int)id];
+            }
+            
+            ~FunctionStorage(){
+                for (size_t i = 0; i < size; i++)
+                    delete functions[i];
+                delete[] functions;
+            }
+    };
+    
+    FunctionStorage functions = {
+            {FunctionID::ADD, new Function{parks::genetic::add, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::SUBTRACT, new Function{parks::genetic::subtract, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::MULTIPLY, new Function{parks::genetic::multiply, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::DIVIDE, new Function{parks::genetic::divide, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::MOD, new Function{parks::genetic::mod, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::ROUND, new Function{parks::genetic::round, 0, 0, ARGS_SINGLE | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::MIN, new Function{parks::genetic::min, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::MAX, new Function{parks::genetic::max, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::ABS, new Function{parks::genetic::abs, 0, 0, ARGS_SINGLE | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::LOG, new Function{parks::genetic::log, 0, 0, ARGS_SINGLE | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::SIN, new Function{parks::genetic::sin, 0, 0, ARGS_SINGLE | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::COS, new Function{parks::genetic::cos, 0, 0, ARGS_SINGLE | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::ATAN, new Function{parks::genetic::atan, 0, 0, ARGS_SINGLE | ARGS_VARIABLES | ARGS_FUNCS}},
+            {FunctionID::NOISE, new Function{parks::genetic::noise, 5, 0, ARGS_BOTH | ARGS_VARIABLES}},
+            {FunctionID::COLOR_NOISE, new Function{parks::genetic::colorNoise, 5, 0, ARGS_BOTH | ARGS_VARIABLES}},
     };
 
 }
