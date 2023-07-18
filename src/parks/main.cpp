@@ -3,11 +3,11 @@
 #include <parks/window.h>
 #include <blt/std/logging.h>
 #include "parks/renderer/engine.h"
+#include <genetic/util.h>
 
 using namespace parks;
 
 int main(){
-
     Settings settings;
     settings.setProperty(Properties::WINDOW_WIDTH, new Properties::Value<int>(1440));
     settings.setProperty(Properties::WINDOW_HEIGHT, new Properties::Value<int>(720));

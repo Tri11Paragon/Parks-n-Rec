@@ -31,6 +31,19 @@ namespace parks {
     inline static bool chance(double bound = 0.5){
         return randomDouble(0, 1) < bound;
     }
+    
+    inline static double fast_fmod(double d, double div){
+        auto reciprocal = 1.0f / div;
+        return d - div * (int)(d * reciprocal);
+    }
+    
+    class floatMod {
+        public:
+            double operator()(double x, double y){
+                return fast_fmod(x, y);
+            }
+    };
+    
 }
 
 #endif //PARKSNREC_UTIL_H
