@@ -6,6 +6,7 @@
 #define PARKSNREC_PROGRAM_V3_H
 
 #include <genetic/v3/functions_v3.h>
+#include "ImNodesEz.h"
 
 namespace parks::genetic {
     
@@ -14,7 +15,7 @@ namespace parks::genetic {
         unsigned int pos{};
         ParameterSet set;
         
-        GeneticNode(FunctionID op, unsigned int pos, const ParameterSet& set);
+        GeneticNode(FunctionID op, unsigned int pos, ParameterSet  set);
     };
     
     class GeneticTree {
@@ -42,23 +43,33 @@ namespace parks::genetic {
             static inline int left(int pos){
                 return 2 * pos;
             }
+            
             static inline int right(int pos){
                 return 2 * pos + 1;
             }
+            
             static inline int parent(int pos){
                 if (pos <= 0)
-                    return 0;
-                return (pos) / 2;
+                    return -1;
+                //if (pos % 2 == 0)
+                return pos / 2;
+                //return (pos + 1) / 2;
             }
-            inline GeneticNode* leftNode(int pos){
+            
+            inline GeneticNode* node(int pos){
                 if (pos < 0 || pos >= size)
                     return nullptr;
-                return nodes[left(pos)];
+                return nodes[pos];
             }
+            
+            inline GeneticNode* leftNode(int pos){
+                return node(left(pos));
+            }
+            
             inline GeneticNode* rightNode(int pos){
                 if (pos < 0 || pos >= size)
                     return nullptr;
-                return nodes[right(pos)];
+                return node(right(pos));
             }
             
             static int height(int node);
@@ -70,6 +81,10 @@ namespace parks::genetic {
                 }
             }
             
+            [[nodiscard]] inline int getSize() const {
+                return size;
+            }
+            
             ~GeneticTree(){
                 deleteTree();
                 delete[] nodes;
@@ -78,20 +93,43 @@ namespace parks::genetic {
     
     class Program {
         private:
+            struct ImNode_t
+            {
+                int height{};
+                int index{};
+                FunctionID id;
+                ImVec2 pos{};
+                bool selected{};
+                ImNodes::Ez::SlotInfo inputs[1]{};
+                ImNodes::Ez::SlotInfo outputs[2]{};
+            };
+            std::vector<ImNode_t> treeNodes;
+            
             unsigned char pixels[WIDTH * HEIGHT * CHANNELS];
+            GeneticTree* tree;
             
             static size_t getPixelPosition(unsigned int x, unsigned int y){
                 return x * CHANNELS + y * WIDTH * CHANNELS;
             }
+            void regenTreeDisplay();
+            
+            float renderProgress;
         public:
+            Program() = default;
+            
             void run();
+            void draw();
         
-            float getRenderProgress(){
-                return 0;
+            [[nodiscard]] float getRenderProgress() const{
+                return renderProgress;
             }
             
             inline unsigned char* getPixels(){
                 return pixels;
+            }
+            
+            ~Program(){
+                delete tree;
             }
     };
     

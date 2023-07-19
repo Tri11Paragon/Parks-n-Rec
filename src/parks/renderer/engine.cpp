@@ -76,6 +76,7 @@ namespace parks {
                 ImGui::Checkbox("Show Image Output?", &showImage);
                 p->run();
             ImGui::End();
+            p->draw();
             geneticImageTexture.upload(p->getPixels(), GL_UNSIGNED_BYTE, WIDTH, HEIGHT, CHANNELS);
             
             if (showImage) {
