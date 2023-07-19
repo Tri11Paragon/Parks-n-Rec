@@ -3,15 +3,16 @@
 //
 #include "parks/renderer/engine.h"
 #include <imgui.h>
-#include <genetic/old/genetic.h>
 #include <memory>
 #include <blt/profiling/profiler.h>
 #include <thread>
 #include <mutex>
 #include <barrier>
-#include <genetic/old/genetic.h>
+#include <genetic/v3/program_v3.h>
 
 namespace parks {
+    
+    genetic::Program* p;
     
     Engine::Engine(const Settings& settings): settings(settings) {
         vao.bind();
@@ -31,10 +32,10 @@ namespace parks {
         );
         basicQuadVAO.createVBO({GL_ELEMENT_ARRAY_BUFFER, basicQuad_i, sizeof(basicQuad_i)});
         
-        geneticImageTexture.allocate(GL_UNSIGNED_BYTE, gtWidth, gtHeight, gtChannels);
+        geneticImageTexture.allocate(GL_UNSIGNED_BYTE, WIDTH, HEIGHT, CHANNELS);
         glGenerateMipmap(GL_TEXTURE_2D);
         
-        p = std::make_unique<genetic::Program>();
+        p = new genetic::Program();
     }
     
     void Engine::run() {
@@ -68,92 +69,14 @@ namespace parks {
 #endif
             
             static bool showImage = true;
-            static bool outputConsole = false;
-            p->drawTree();
+            
             ImGui::ShowDemoWindow();
             ImGui::SetNextWindowSize({0, 512}, ImGuiCond_Once);
             ImGui::Begin("Genetic Controls");
                 ImGui::Checkbox("Show Image Output?", &showImage);
-                ImGui::Checkbox("Show Debug Output?", &outputConsole);
-                if (ImGui::Button("Generate Image")) {
-                    constructImage(outputConsole);
-                }
-                if (ImGui::Button("Regen Program And Run")) {
-                    old = std::move(p);
-                    p = std::make_unique<genetic::Program>();
-                    constructImage(outputConsole);
-                }
-                if (ImGui::Button("Crossover")){
-                    auto np = p->crossover(old.get());
-                    old = std::move(p);
-                    p = std::unique_ptr<genetic::Program>(np);
-                    BLT_TRACE("cross| np: %d, old: %d, p: %d, save: %d", np, old.get(), p.get(), save.get());
-                }
-                if (ImGui::Button("Mutate")){
-                    p->mutate();
-                }
-                if (ImGui::Button("Save")){
-                    save = std::move(p);
-                    p = std::make_unique<genetic::Program>();
-                    BLT_TRACE("save| old: %d, p: %d, save: %d", old.get(), p.get(), save.get());
-                }
-                if (ImGui::Button("Revert")){
-                    old = std::move(p);
-                    p = std::move(save);
-                    BLT_TRACE("revert| old: %d, p: %d, save: %d", old.get(), p.get(), save.get());
-                }
-                if (ImGui::Button("Rescale Color")){
-                    double dR = g_maxR - g_minR;
-                    double dG = g_maxG - g_minG;
-                    double dB = g_maxB - g_minB;
-                    for (unsigned int i = 0; i < gtWidth; i++) {
-                        for (unsigned int j = 0; j < gtHeight; j++) {
-                            const auto pos = i * gtChannels + j * gtChannels * gtWidth;
-                            displayProgress = (float) (j * gtChannels +
-                                                       i * gtChannels * gtWidth) /
-                                              (float) (gtWidth * gtHeight * gtChannels);
-                            pixels[pos] = (unsigned char) (((values[pos] - g_minR) / dR) *
-                                                           255);
-                            pixels[pos + 1] = (unsigned char) (
-                                    ((values[pos + 1] - g_minG) / dG) * 255);
-                            pixels[pos + 2] = (unsigned char) (
-                                    ((values[pos + 2] - g_minB) / dB) * 255);
-                        }
-                    }
-                }
-                if (ImGui::CollapsingHeader("Progress")) {
-                    ImGui::Text("Render Progress: ");
-                    for (const auto progress : renderingProgress)
-                        ImGui::ProgressBar(progress);
-                    ImGui::Text("Display Progress: ");
-                    ImGui::ProgressBar(displayProgress);
-                }
-                
-                int count = 0;
-                for (auto b : completedThreads)
-                    if (b)
-                        count++;
-                if (count == threads){
-                    double dR = g_maxR - g_minR;
-                    double dG = g_maxG - g_minG;
-                    double dB = g_maxB - g_minB;
-                    for (unsigned int i = 0; i < gtWidth; i++) {
-                        for (unsigned int j = 0; j < gtHeight; j++) {
-                            const auto pos = i * gtChannels + j * gtChannels * gtWidth;
-                            displayProgress = (float) (j * gtChannels +
-                                                                 i * gtChannels * gtWidth) /
-                                                        (float) (gtWidth * gtHeight * gtChannels);
-                            pixels[pos] = (unsigned char) (((values[pos] - g_minR) / dR) *
-                                                           255);
-                            pixels[pos + 1] = (unsigned char) (
-                                    ((values[pos + 1] - g_minG) / dG) * 255);
-                            pixels[pos + 2] = (unsigned char) (
-                                    ((values[pos + 2] - g_minB) / dB) * 255);
-                        }
-                    }
-                }
-                geneticImageTexture.upload(pixels, GL_UNSIGNED_BYTE, gtWidth, gtHeight, gtChannels);
+                p->run();
             ImGui::End();
+            geneticImageTexture.upload(p->getPixels(), GL_UNSIGNED_BYTE, WIDTH, HEIGHT, CHANNELS);
             
             if (showImage) {
                 geneticImageTexture.bind();
@@ -161,8 +84,8 @@ namespace parks {
                 auto windowSize = Window::getWindowSize();
                 
                 blt::mat4x4 trans;
-                trans.translate(((float)(windowSize.width - gtWidth))/2.0f, ((float)(windowSize.height - gtHeight))/2.0f, 0);
-                trans.scale(gtWidth, gtHeight, 1);
+                trans.translate(((float)(windowSize.width - WIDTH))/2.0f, ((float)(windowSize.height - HEIGHT))/2.0f, 0);
+                trans.scale(WIDTH, HEIGHT, 1);
                 
                 glDisable(GL_DEPTH_TEST);
                 glDisable(GL_CULL_FACE);
@@ -179,13 +102,7 @@ namespace parks {
     }
     
     Engine::~Engine() {
-        running = false;
-        for (auto*& t : runningThread) {
-            if (t == nullptr)
-                continue;
-            t->join();
-            delete t;
-        }
+        delete p;
         BLT_PRINT_PROFILE("Genetic", blt::logging::BLT_NONE, true);
     }
 }

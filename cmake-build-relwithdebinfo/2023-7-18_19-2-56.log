@@ -1,0 +1,127 @@
+[19:02:56] [app.h:86] [BLT_TRACE]: Setting property information (1)
+[19:02:56] [app.h:87] [BLT_TRACE]: Values size / capacity (before): 0/0
+[19:02:56] [app.h:89] [BLT_TRACE]: Property: 1, Value: 1842842912 (Setting)
+[19:02:56] [app.h:93] [BLT_TRACE]: Values size / capacity (after): 2/2
+[19:02:56] [app.h:95] [BLT_TRACE]: Dumping values:
+[19:02:56] [app.h:96] [BLT_TRACE]: ---------------------
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (0): 0
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (1): 1842842912
+[19:02:56] [app.h:99] [BLT_TRACE]: ---------------------
+[19:02:56] [app.h:86] [BLT_TRACE]: Setting property information (2)
+[19:02:56] [app.h:87] [BLT_TRACE]: Values size / capacity (before): 2/2
+[19:02:56] [app.h:89] [BLT_TRACE]: Property: 2, Value: 1842845664 (Setting)
+[19:02:56] [app.h:93] [BLT_TRACE]: Values size / capacity (after): 4/4
+[19:02:56] [app.h:95] [BLT_TRACE]: Dumping values:
+[19:02:56] [app.h:96] [BLT_TRACE]: ---------------------
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (0): 0
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (1): 1842842912
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (2): 1842845664
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (3): 0
+[19:02:56] [app.h:99] [BLT_TRACE]: ---------------------
+[19:02:56] [app.h:86] [BLT_TRACE]: Setting property information (3)
+[19:02:56] [app.h:87] [BLT_TRACE]: Values size / capacity (before): 4/4
+[19:02:56] [app.h:89] [BLT_TRACE]: Property: 3, Value: 1842845280 (Setting)
+[19:02:56] [app.h:93] [BLT_TRACE]: Values size / capacity (after): 4/4
+[19:02:56] [app.h:95] [BLT_TRACE]: Dumping values:
+[19:02:56] [app.h:96] [BLT_TRACE]: ---------------------
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (0): 0
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (1): 1842842912
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (2): 1842845664
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (3): 1842845280
+[19:02:56] [app.h:99] [BLT_TRACE]: ---------------------
+[19:02:56] [app.h:86] [BLT_TRACE]: Setting property information (0)
+[19:02:56] [app.h:87] [BLT_TRACE]: Values size / capacity (before): 4/4
+[19:02:56] [app.h:89] [BLT_TRACE]: Property: 0, Value: 1842856480 (Setting)
+[19:02:56] [app.h:93] [BLT_TRACE]: Values size / capacity (after): 4/4
+[19:02:56] [app.h:95] [BLT_TRACE]: Dumping values:
+[19:02:56] [app.h:96] [BLT_TRACE]: ---------------------
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (0): 1842856480
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (1): 1842842912
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (2): 1842845664
+[19:02:56] [app.h:98] [BLT_TRACE]: Value (3): 1842845280
+[19:02:56] [app.h:99] [BLT_TRACE]: ---------------------
+[19:02:56] [resources.cpp:151] [BLT_INFO]:  Using 16 threads to load resources!
+[19:02:56] [resources.cpp:41] [BLT_TRACE]: Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[19:02:56] [window.cpp:72] [BLT_TRACE]: Complied with GLFW 3.3.8
+[19:02:56] [window.cpp:80] [BLT_DEBUG]: Using GLFW 3.3.8
+[19:02:56] [window.cpp:196] [BLT_INFO]:  Loaded OpenGL 4.6
+[19:02:56] [resources.cpp:54] [BLT_DEBUG]: Beginning loading of resources
+[19:02:56] [resources.cpp:76] [BLT_TRACE]: Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[19:02:56] [resources.cpp:88] [BLT_TRACE]: Loaded texture 'test.png' with width/height: (1920, 1009)
+[19:02:56] [resources.cpp:129] [BLT_TRACE]: Loaded texture 'test.png' to graphics card!
+[19:02:56] [resources.cpp:147] [BLT_INFO]:  All resources have been loaded. A total of 1 textures!
+[19:02:58] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.291369
+[19:02:58] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.863153
+[19:02:58] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.988353
+[19:02:58] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.350658
+[19:02:58] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.764157
+[19:02:58] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:01] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.872822
+[19:03:01] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.966916
+[19:03:01] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.380760
+[19:03:01] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.407018
+[19:03:01] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.974113
+[19:03:01] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:02] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.469398
+[19:03:02] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.573891
+[19:03:02] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.511403
+[19:03:02] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.749043
+[19:03:02] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.008311
+[19:03:02] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:03] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.250265
+[19:03:03] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.958258
+[19:03:03] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.606161
+[19:03:03] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.148481
+[19:03:03] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.722687
+[19:03:03] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:03] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.444843
+[19:03:03] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.646192
+[19:03:03] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.990609
+[19:03:03] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.196429
+[19:03:03] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.552198
+[19:03:03] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:04] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.759741
+[19:03:04] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.777745
+[19:03:04] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.169964
+[19:03:04] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.931225
+[19:03:04] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.135551
+[19:03:04] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:04] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.175697
+[19:03:04] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.964336
+[19:03:04] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.811695
+[19:03:04] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.953393
+[19:03:04] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.295207
+[19:03:04] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:05] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.374571
+[19:03:05] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.288470
+[19:03:05] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.728791
+[19:03:05] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.966829
+[19:03:05] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.076149
+[19:03:05] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:05] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.129290
+[19:03:05] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.472407
+[19:03:05] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.849235
+[19:03:05] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.896829
+[19:03:05] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.593249
+[19:03:05] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:06] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.037913
+[19:03:06] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.271813
+[19:03:06] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.399481
+[19:03:06] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.603428
+[19:03:06] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.287358
+[19:03:06] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:06] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.426122
+[19:03:06] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.449867
+[19:03:06] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.027574
+[19:03:06] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.837122
+[19:03:06] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.872850
+[19:03:06] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:07] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.837095
+[19:03:07] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.159326
+[19:03:07] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.419273
+[19:03:07] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.433738
+[19:03:07] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.383272
+[19:03:07] [program_v3.cpp:16] [BLT_TRACE]: ------------
+[19:03:08] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.851311
+[19:03:08] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.020275
+[19:03:08] [program_v3.cpp:14] [BLT_TRACE]: Using param 0.341365

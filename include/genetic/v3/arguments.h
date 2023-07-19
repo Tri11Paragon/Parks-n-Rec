@@ -93,7 +93,7 @@ namespace parks::genetic {
     };
     
     struct OperatorArguments {
-        int numberOfArgs;
+        unsigned char argsInfo;
         Color left, right;
     };
     
