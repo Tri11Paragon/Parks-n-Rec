@@ -35,17 +35,19 @@ namespace parks::genetic {
                 for (int i = 0; i < size; i++)
                     nodes[i] = nullptr;
                 
+                //nodes[0] = new GeneticNode(FunctionID::ADD, 0, functions[FunctionID::ADD].generateRandomParameters());
+                
                 generateRandomTree();
             }
             
             Color execute(double x, double y);
             
             static inline int left(int pos){
-                return 2 * pos;
+                return 2 * (pos + 1);
             }
             
             static inline int right(int pos){
-                return 2 * pos + 1;
+                return 2 * (pos + 1) + 1;
             }
             
             static inline int parent(int pos){

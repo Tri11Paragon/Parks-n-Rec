@@ -26,6 +26,8 @@ namespace parks::genetic {
     constexpr unsigned char ARGS_FUNCS = 0b00100000;
     
 
+    Color randScalar(OperatorArguments args, const ParameterSet& params);
+    Color randColor(OperatorArguments args, const ParameterSet& params);
     Color add(OperatorArguments args, const ParameterSet& params);
     Color subtract(OperatorArguments args, const ParameterSet& params);
     Color multiply(OperatorArguments args, const ParameterSet& params);
@@ -43,7 +45,7 @@ namespace parks::genetic {
     Color colorNoise(OperatorArguments args, const ParameterSet& params);
     
     enum class FunctionID {
-         ADD, SUBTRACT, MULTIPLY, DIVIDE, MOD, ROUND, MIN, MAX, ABS, LOG, SIN, COS, ATAN, NOISE, COLOR_NOISE
+         RAND_SCALAR, RAND_COLOR, ADD, SUBTRACT, MULTIPLY, DIVIDE, MOD, ROUND, MIN, MAX, ABS, LOG, SIN, COS, ATAN, NOISE, COLOR_NOISE
     };
     
     class Function {
@@ -136,6 +138,8 @@ namespace parks::genetic {
     };
     
     inline FunctionStorage functions = {
+            {FunctionID::RAND_SCALAR, new Function{"RS", parks::genetic::randScalar, 1, 0, ARGS_NONE}},
+            {FunctionID::RAND_COLOR, new Function{"RC", parks::genetic::randColor, 0, 1, ARGS_NONE}},
             {FunctionID::ADD, new Function{"+", parks::genetic::add, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
             {FunctionID::SUBTRACT, new Function{"-", parks::genetic::subtract, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},
             {FunctionID::MULTIPLY, new Function{"*", parks::genetic::multiply, 0, 0, ARGS_BOTH | ARGS_SCALARS | ARGS_COLORS | ARGS_VARIABLES | ARGS_FUNCS}},

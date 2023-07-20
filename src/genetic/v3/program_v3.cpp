@@ -117,6 +117,7 @@ namespace parks::genetic {
     
     void GeneticTree::generateRandomTree() {
         std::queue<int> nodesToProcess;
+        std::queue<int> nonFuncNodesToProcess;
         nodesToProcess.push(0);
         while (!nodesToProcess.empty()){
             int node = nodesToProcess.front();
@@ -125,30 +126,55 @@ namespace parks::genetic {
             if (node >= size)
                 continue;
             
-//            // end early by constructing a leaf
-//            if (chance(5)){
-//                continue;
-//            }
-            
             auto op = functions.select();
             auto& func = functions[op];
             ParameterSet set = func.generateRandomParameters();
             
-            if (func.allowsArgument() && func.allowedFuncs()) {
+            if (func.allowsArgument()) {
+                auto& queueToAddTo = func.allowedFuncs() ? nodesToProcess : nonFuncNodesToProcess;
                 if (func.singleArgument())
-                    nodesToProcess.push(left(node));
+                    queueToAddTo.push(left(node));
                 else if (func.bothArgument()){
-                    nodesToProcess.push(left(node));
-                    nodesToProcess.push(right(node));
+                    queueToAddTo.push(left(node));
+                    queueToAddTo.push(right(node));
                 } else if (func.dontCareArgument()) {
                     if (chance(80))
-                        nodesToProcess.push(left(node));
+                        queueToAddTo.push(left(node));
                     if (chance(80))
-                        nodesToProcess.push(right(node));
+                        queueToAddTo.push(right(node));
                 }
             }
             
             nodes[node] = new GeneticNode(op, node, set);
+        }
+        
+        while (!nonFuncNodesToProcess.empty()){
+            int node = nonFuncNodesToProcess.front();
+            nonFuncNodesToProcess.pop();
+            
+            if (node >= size)
+                continue;
+            
+            int parent = GeneticTree::parent(node);
+            auto parentNode = this->node(parent);
+            
+            // TODO: throw error?!?
+            if (parentNode == nullptr)
+                continue;
+            
+            auto& parentFunc = functions[parentNode->op];
+            
+            std::vector<FunctionID> allowedFuncs;
+            if (parentFunc.allowedColors())
+                allowedFuncs.push_back(FunctionID::RAND_COLOR);
+            if (parentFunc.allowedScalars())
+                allowedFuncs.push_back(FunctionID::RAND_SCALAR);
+            
+            if (allowedFuncs.empty())
+                continue;
+            
+            auto func = allowedFuncs[randomInt(0, (int)allowedFuncs.size()-1)];
+            nodes[node] = new GeneticNode(func, node, functions[func].generateRandomParameters());
         }
     }
     
@@ -170,6 +196,9 @@ namespace parks::genetic {
         auto ourNode = nodes[node];
         auto& func = functions[ourNode->op];
         
+        if (func.disallowsArgument())
+            return func.call({ARGS_NONE, leftC, rightC}, ourNode->set);
+        
         // functions should always take precedence
         if (func.allowedFuncs()) {
             int l = left(node);
@@ -180,27 +209,23 @@ namespace parks::genetic {
             
             if (lNode != nullptr)
                 leftC = execute_internal(x, y, l);
+            else
+                if (func.allowedVariables())
+                    leftC = Color(x);
             if (rNode != nullptr)
                 rightC = execute_internal(x, y, r);
+            else
+                if (func.allowedVariables())
+                    rightC = Color(y);
         } else {
-            std::vector<Color> lefts;
-            std::vector<Color> rights;
-            if (func.allowedColors()) {
-                lefts.push_back(RandomColor::get());
-                rights.push_back(RandomColor::get());
-            }
-            if (func.allowedScalars()) {
-                lefts.push_back(RandomScalar::get());
-                rights.push_back(RandomScalar::get());
-            }
             if (func.allowedVariables()) {
-                lefts.emplace_back(x);
-                rights.emplace_back(y);
+                leftC = Color(x);
+                rightC = Color(y);
+            } else {
+                BLT_WARN("Function called (%s) from node (%d) without any args!", func.name.c_str(), node);
             }
-            leftC = lefts[randomInt(0, (int)lefts.size()-1)];
-            rightC = rights[randomInt(0, (int)rights.size()-1)];
         }
-        return func.call({ARGS_SINGLE, leftC, rightC}, ourNode->set);
+        return func.call({ARGS_BOTH, leftC, rightC}, ourNode->set);
     }
     
 }

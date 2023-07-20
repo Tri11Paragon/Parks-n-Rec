@@ -16,7 +16,7 @@ namespace parks::genetic {
     }
     
     Color subtract(OperatorArguments args, const ParameterSet& params) {
-        return applyFunc(std::minus(), args.left, args.right);
+        return applyFunc(std::minus(), args.left, args.right);;
     }
     
     Color multiply(OperatorArguments args, const ParameterSet& params) {
@@ -84,6 +84,14 @@ namespace parks::genetic {
         float b = stb_perlin_turbulence_noise3(0.78423, scaleY, scaleX, (float)params[0].r * lacunarity, (float)params[1].r * gain, (int)std::max(2.0, params[2].r * octaves));
         
         return Color(r, g, b);
+    }
+    
+    Color randScalar(OperatorArguments args, const ParameterSet& params) {
+        return params[0];
+    }
+    
+    Color randColor(OperatorArguments args, const ParameterSet& params) {
+        return params[0];
     }
     
     FunctionStorage::FunctionStorage(
