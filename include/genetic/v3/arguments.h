@@ -10,7 +10,10 @@
 namespace parks::genetic {
     
     constexpr double d = 0.4;
-    constexpr double m = 0.2;
+    constexpr double nodeMutationChance = 0.2;
+    constexpr double scalarMutationChance = 0.2;
+    constexpr double colorMutationChance = 0.2;
+    constexpr double functionMutationChance = 0.2;
     
     struct Color {
         double r, g, b;

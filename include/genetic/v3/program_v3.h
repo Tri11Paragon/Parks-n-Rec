@@ -22,12 +22,13 @@ namespace parks::genetic {
         private:
             GeneticNode** nodes;
             int size = 1;
+            int max_height;
             
-            void generateRandomTree();
+            void generateRandomTree(int n);
             
             Color execute_internal(double x, double y, int node);
         public:
-            explicit GeneticTree(int max_height){
+            explicit GeneticTree(int max_height): max_height(max_height) {
                 for (int i = 0; i < max_height; i++)
                     size *= 2;
                 nodes = new GeneticNode*[size];
@@ -37,7 +38,7 @@ namespace parks::genetic {
                 
                 //nodes[0] = new GeneticNode(FunctionID::ADD, 0, functions[FunctionID::ADD].generateRandomParameters());
                 
-                generateRandomTree();
+                generateRandomTree(0);
             }
             
             Color execute(double x, double y);
@@ -75,6 +76,9 @@ namespace parks::genetic {
             }
             
             static int height(int node);
+            int subtreeSize(int n) const;
+            
+            void deleteSubtree(int n);
             
             void deleteTree(){
                 for (int i = 0; i < size; i++) {
@@ -86,6 +90,8 @@ namespace parks::genetic {
             [[nodiscard]] inline int getSize() const {
                 return size;
             }
+            
+            void mutate();
             
             ~GeneticTree(){
                 deleteTree();
@@ -114,6 +120,8 @@ namespace parks::genetic {
                 return x * CHANNELS + y * WIDTH * CHANNELS;
             }
             void regenTreeDisplay();
+            
+            void processImage();
             
             float renderProgress;
         public:

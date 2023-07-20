@@ -97,6 +97,15 @@ namespace parks::genetic {
                 return acceptsArgs & ARGS_FUNCS;
             }
             
+            [[nodiscard]] inline unsigned int getRequiredScalars() const{
+                return requiredScalars;
+            }
+            
+            [[nodiscard]] inline unsigned int getRequiredColors() const{
+                return requiredColors;
+            }
+            
+            
             [[nodiscard]] ParameterSet generateRandomParameters() const {
                 ParameterSet set;
                 for (unsigned int i = 0; i < requiredScalars; i++)

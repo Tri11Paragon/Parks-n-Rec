@@ -16,31 +16,22 @@ namespace parks::genetic {
     }
     
     void Program::run() {
+        if (ImGui::Button("Run Program")){
+            processImage();
+            regenTreeDisplay();
+        }
         if (ImGui::Button("Regen Program And Run")) {
             delete tree;
             tree = new GeneticTree(7);
             regenTreeDisplay();
-            ParameterSet set = functions[FunctionID::COLOR_NOISE].generateRandomParameters();
             
-            for (unsigned int i = 0; i < WIDTH; i++) {
-                for (unsigned int j = 0; j < HEIGHT; j++){
-                    auto pos = getPixelPosition(i, j);
-                    
-                    //auto out = functions[FunctionID::COLOR_NOISE].call({ARGS_BOTH, Color((double)i / WIDTH), Color((double)j / HEIGHT)}, set);
-                    
-                    auto out = tree->execute((double)i / WIDTH, (double)j / HEIGHT);
-                    
-                    pixels[pos] = (unsigned char)(out.r * 255);
-                    pixels[pos + 1] = (unsigned char) (out.g * 255);
-                    pixels[pos + 2] = (unsigned char) (out.b * 255);
-                }
-            }
+            processImage();
         }
         if (ImGui::Button("Crossover")){
         
         }
         if (ImGui::Button("Mutate")){
-        
+            tree->mutate();
         }
         if (ImGui::Button("Save")){
         
@@ -112,13 +103,29 @@ namespace parks::genetic {
         ImGui::End();
     }
     
+    void Program::processImage() {
+        for (unsigned int i = 0; i < WIDTH; i++) {
+            for (unsigned int j = 0; j < HEIGHT; j++){
+                auto pos = getPixelPosition(i, j);
+                
+                //auto out = functions[FunctionID::COLOR_NOISE].call({ARGS_BOTH, Color((double)i / WIDTH), Color((double)j / HEIGHT)}, set);
+                
+                auto out = tree->execute((double)i / WIDTH, (double)j / HEIGHT);
+                
+                pixels[pos] = (unsigned char)(out.r * 255);
+                pixels[pos + 1] = (unsigned char) (out.g * 255);
+                pixels[pos + 2] = (unsigned char) (out.b * 255);
+            }
+        }
+    }
+    
     GeneticNode::GeneticNode(FunctionID op, unsigned int pos, ParameterSet  set):
             op(op), pos(pos), set(std::move(set)) {}
     
-    void GeneticTree::generateRandomTree() {
+    void GeneticTree::generateRandomTree(int n) {
         std::queue<int> nodesToProcess;
         std::queue<int> nonFuncNodesToProcess;
-        nodesToProcess.push(0);
+        nodesToProcess.push(n);
         while (!nodesToProcess.empty()){
             int node = nodesToProcess.front();
             nodesToProcess.pop();
@@ -226,6 +233,88 @@ namespace parks::genetic {
             }
         }
         return func.call({ARGS_BOTH, leftC, rightC}, ourNode->set);
+    }
+    
+    void GeneticTree::mutate() {
+        for (int i = 0; i < size; i++){
+            if (nodes[i] == nullptr) {
+                // TODO: ?
+            } else {
+                int nodeSize = subtreeSize(i);
+                double factor = 1.0 / nodeSize;
+                if (chance(nodeMutationChance * factor)) {
+                    // delete old subtrees
+                    deleteSubtree(i);
+                    // create a new completely random tree
+                    generateRandomTree(i);
+                }
+                if (chance(functionMutationChance * factor)){
+                    auto newFuncID = functions.select();
+                    auto oldFuncID = nodes[i]->op;
+                    if (newFuncID != nodes[i]->op){
+                        nodes[i]->op = newFuncID;
+                        auto& newFunc = functions[newFuncID];
+                        auto& oldFunc = functions[oldFuncID];
+                        // TODO: use some of the old params!!
+                        if (newFunc.getRequiredColors() != oldFunc.getRequiredColors() || newFunc.getRequiredScalars() != oldFunc.getRequiredScalars()){
+                            nodes[i]->set = newFunc.generateRandomParameters();
+                        }
+                        if (oldFunc.dontCareArgument() && newFunc.dontCareArgument())
+                            continue;
+                        if (oldFunc.singleArgument() && newFunc.singleArgument())
+                            continue;
+                        if (oldFunc.bothArgument() && oldFunc.bothArgument())
+                            continue;
+                        if (oldFunc.singleArgument() && newFunc.bothArgument())
+                            generateRandomTree(right(i));
+                        if (oldFunc.bothArgument() && newFunc.singleArgument())
+                            deleteSubtree(right(i));
+                    }
+                }
+                if (nodes[i]->op == FunctionID::RAND_SCALAR && chance(scalarMutationChance * factor)){
+                    ParameterSet newSet;
+                    newSet.add(RandomScalar::get(nodes[i]->set[0]));
+                    nodes[i]->set = std::move(newSet);
+                }
+                if (nodes[i]->op == FunctionID::RAND_COLOR && chance(colorMutationChance * factor)){
+                    ParameterSet newSet;
+                    newSet.add(RandomColor::get(nodes[i]->set[0]));
+                    nodes[i]->set = std::move(newSet);
+                }
+            }
+        }
+    }
+    
+    void GeneticTree::deleteSubtree(int n) {
+        std::queue<int> nodesToDelete;
+        nodesToDelete.push(n);
+        while (!nodesToDelete.empty()){
+            auto node = nodesToDelete.front();
+            nodesToDelete.pop();
+            
+            if (node >= size)
+                continue;
+            
+            if (nodes[node] != nullptr) {
+                delete nodes[node];
+                nodes[node] = nullptr;
+            }
+            
+            nodesToDelete.push(left(node));
+            nodesToDelete.push(right(node));
+        }
+    }
+    
+    int GeneticTree::subtreeSize(int n) const {
+        int l = left(n);
+        int r = right(n);
+        int leftSize = 1;
+        int rightSize = 1;
+        if (l < size && nodes[l] != nullptr)
+            leftSize = subtreeSize(l);
+        if (r < size && nodes[r] != nullptr)
+            rightSize = subtreeSize(r);
+        return std::max(leftSize, rightSize) + 1;
     }
     
 }
