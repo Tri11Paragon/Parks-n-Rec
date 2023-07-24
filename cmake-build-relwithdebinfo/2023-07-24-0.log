@@ -1,0 +1,81 @@
+[17:31:18] [TRACE] (app.h:86) Setting property information (1)
+[17:31:18] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[17:31:18] [TRACE] (app.h:89) Property: 1, Value: -1141136144 (Setting)
+[17:31:18] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[17:31:18] [TRACE] (app.h:95) Dumping values:
+[17:31:18] [TRACE] (app.h:96) ---------------------
+[17:31:18] [TRACE] (app.h:98) Value (0): 0
+[17:31:18] [TRACE] (app.h:98) Value (1): -1141136144
+[17:31:18] [TRACE] (app.h:99) ---------------------
+[17:31:18] [TRACE] (app.h:86) Setting property information (2)
+[17:31:18] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[17:31:18] [TRACE] (app.h:89) Property: 2, Value: -1141133232 (Setting)
+[17:31:18] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[17:31:18] [TRACE] (app.h:95) Dumping values:
+[17:31:18] [TRACE] (app.h:96) ---------------------
+[17:31:18] [TRACE] (app.h:98) Value (0): 0
+[17:31:18] [TRACE] (app.h:98) Value (1): -1141136144
+[17:31:18] [TRACE] (app.h:98) Value (2): -1141133232
+[17:31:18] [TRACE] (app.h:98) Value (3): 0
+[17:31:18] [TRACE] (app.h:99) ---------------------
+[17:31:18] [TRACE] (app.h:86) Setting property information (3)
+[17:31:18] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[17:31:18] [TRACE] (app.h:89) Property: 3, Value: -1141133936 (Setting)
+[17:31:18] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[17:31:18] [TRACE] (app.h:95) Dumping values:
+[17:31:18] [TRACE] (app.h:96) ---------------------
+[17:31:18] [TRACE] (app.h:98) Value (0): 0
+[17:31:18] [TRACE] (app.h:98) Value (1): -1141136144
+[17:31:18] [TRACE] (app.h:98) Value (2): -1141133232
+[17:31:18] [TRACE] (app.h:98) Value (3): -1141133936
+[17:31:18] [TRACE] (app.h:99) ---------------------
+[17:31:18] [TRACE] (app.h:86) Setting property information (0)
+[17:31:18] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[17:31:18] [TRACE] (app.h:89) Property: 0, Value: -1141133136 (Setting)
+[17:31:18] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[17:31:18] [TRACE] (app.h:95) Dumping values:
+[17:31:18] [TRACE] (app.h:96) ---------------------
+[17:31:18] [TRACE] (app.h:98) Value (0): -1141133136
+[17:31:18] [TRACE] (app.h:98) Value (1): -1141136144
+[17:31:18] [TRACE] (app.h:98) Value (2): -1141133232
+[17:31:18] [TRACE] (app.h:98) Value (3): -1141133936
+[17:31:18] [TRACE] (app.h:99) ---------------------
+[17:31:18] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[17:31:18] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[17:31:18] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[17:31:18] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[17:31:19] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[17:31:19] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[17:31:19] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[17:31:19] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[17:31:19] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[17:31:19] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[17:32:01] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[17:32:01] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[17:32:01] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[17:32:01] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[17:32:01] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[17:32:01] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[17:32:01] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[19:45:47] [STDOUT] (profiler.cpp:35) +-----------------------------------{ Funcs }-----------------------------------+
+[19:45:47] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |   Time (ms)   |  Time (ns)   |  Total (ms)   |
+[19:45:47] [STDOUT] (profiler.cpp:35) +---------+---------+------------+---------------+--------------+---------------+
+[19:45:47] [STDOUT] (profiler.cpp:35) |    1    |    1    |   Switch   |   0.000421    |     421      |   0.000421    |
+[19:45:47] [STDOUT] (profiler.cpp:35) |    2    |    1    |   Index    |  1069.241447  |  1069241447  |  1069.241447  |
+[19:45:47] [STDOUT] (profiler.cpp:35) +---------+---------+------------+---------------+--------------+---------------+
+[19:50:30] [TRACE] (main.cpp:109) 613228204264
+[19:50:31] [TRACE] (main.cpp:149) 613228204264
+[19:50:31] [STDOUT] (profiler.cpp:35) +-----------------------------------{ Funcs }-----------------------------------+
+[19:50:31] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |   Time (ms)   |  Time (ns)   |  Total (ms)   |
+[19:50:31] [STDOUT] (profiler.cpp:35) +---------+---------+------------+---------------+--------------+---------------+
+[19:50:31] [STDOUT] (profiler.cpp:35) |    1    |    1    |   Index    |  1074.174879  |  1074174879  |  1074.174879  |
+[19:50:31] [STDOUT] (profiler.cpp:35) |    2    |    1    |   Switch   |  1275.302311  |  1275302311  |  1275.302311  |
+[19:50:31] [STDOUT] (profiler.cpp:35) +---------+---------+------------+---------------+--------------+---------------+
+[19:50:52] [TRACE] (main.cpp:109) 613228204264
+[19:50:53] [TRACE] (main.cpp:149) 613228204264
+[19:50:53] [STDOUT] (profiler.cpp:35) +-----------------------------------{ Funcs }-----------------------------------+
+[19:50:53] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |   Time (ms)   |  Time (ns)   |  Total (ms)   |
+[19:50:53] [STDOUT] (profiler.cpp:35) +---------+---------+------------+---------------+--------------+---------------+
+[19:50:53] [STDOUT] (profiler.cpp:35) |    1    |    1    |   Index    |  1091.159619  |  1091159619  |  1091.159619  |
+[19:50:53] [STDOUT] (profiler.cpp:35) |    2    |    1    |   Switch   |  1292.884543  |  1292884543  |  1292.884543  |
+[19:50:53] [STDOUT] (profiler.cpp:35) +---------+---------+------------+---------------+--------------+---------------+

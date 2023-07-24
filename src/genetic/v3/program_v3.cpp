@@ -357,9 +357,32 @@ namespace parks::genetic {
         delete[] old2.first;
     }
     
+    bool operatorsCompatible(FunctionID id1, FunctionID id2){
+        auto& f1 = functions[id1];
+        auto& f2 = functions[id2];
+        if (f1.bothArgument() && f2.bothArgument())
+            return true;
+        if (f1.singleArgument() && f2.singleArgument())
+            return true;
+        if (f1.dontCareArgument() && f2.dontCareArgument())
+            return true;
+        if (!f1.allowsArgument() && !f2.allowsArgument())
+            return true;
+        return false;
+    }
+    
     GeneticTree* GeneticTree::breed(GeneticTree* parent1, GeneticTree* parent2) {
         if (chance(60))
             parent1->crossover(parent2);
+        
+        auto newSize = std::max(parent1->size, parent2->size);
+        auto minSize = std::min(parent1->size, parent2->size);
+        
+        if (operatorsCompatible(parent1->node(0)->op, parent2->node(0)->op)) {
+        
+        } else {
+        
+        }
         
         return nullptr;
     }
@@ -494,5 +517,30 @@ namespace parks::genetic {
             return 0;
         return (double)same / (double)count;
     }
-
+    
+    GeneticNode** GeneticTree::copySubtree(int n) {
+        auto** newNodes = new GeneticNode*[size];
+        for (int i = 0; i < size; i++)
+            newNodes[i] = nullptr;
+        
+        std::queue<int> nodesToMove;
+        nodesToMove.push(n);
+        while (!nodesToMove.empty()){
+            auto node = nodesToMove.front();
+            nodesToMove.pop();
+            
+            if (node >= size)
+                continue;
+            
+            if (nodes[node] != nullptr) {
+                newNodes[node] = new GeneticNode(nodes[node]->op, nodes[node]->pos, ParameterSet(nodes[node]->set));
+            }
+            
+            nodesToMove.push(left(node));
+            nodesToMove.push(right(node));
+        }
+        
+        return newNodes;
+    }
+    
 }

@@ -15,7 +15,7 @@ namespace parks::genetic {
         unsigned int pos{};
         ParameterSet set;
         
-        GeneticNode(FunctionID op, unsigned int pos, ParameterSet  set);
+        GeneticNode(FunctionID op, unsigned int pos, ParameterSet set);
     };
     
     class GeneticTree {
@@ -34,6 +34,7 @@ namespace parks::genetic {
             
             Color execute_internal(double x, double y, int node);
         public:
+            explicit GeneticTree(GeneticNode** nodes, int size): nodes(nodes), size(size), max_height(size) { }
             explicit GeneticTree(int max_height): max_height(max_height) {
                 for (int i = 0; i < max_height; i++)
                     size *= 2;
@@ -88,8 +89,11 @@ namespace parks::genetic {
             void deleteSubtree(int n);
             std::pair<GeneticNode**, size_t> moveSubtree(int n);
             void insertSubtree(int n, GeneticNode** tree, size_t size);
+            GeneticNode** copySubtree(int n);
+            
             void processImage(unsigned char* pixels);
             static double evaluate(const unsigned char* pixels);
+            
             double evaluate();
             
             void deleteTree(){
