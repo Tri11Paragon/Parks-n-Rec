@@ -17,35 +17,49 @@ namespace parks::genetic {
     
     void Program::run() {
         if (ImGui::Button("Run Program")){
-            processImage();
-            regenTreeDisplay();
+            if (tree != nullptr) {
+                tree->processImage(pixels);
+                regenTreeDisplay();
+            } else {
+                ImGui::Text("Tree is currently null!");
+            }
         }
         if (ImGui::Button("Regen Program And Run")) {
-            delete tree;
+            delete last_tree;
+            last_tree = tree;
             tree = new GeneticTree(7);
             regenTreeDisplay();
             
-            processImage();
+            tree->processImage(pixels);
         }
         if (ImGui::Button("Crossover")){
-        
+            if (tree != nullptr && saved_tree != nullptr)
+                tree->crossover(saved_tree);
         }
         if (ImGui::Button("Mutate")){
             tree->mutate();
         }
         if (ImGui::Button("Save")){
-        
+            delete saved_tree;
+            saved_tree = tree;
+            tree = nullptr;
         }
         if (ImGui::Button("Revert")){
-        
+            delete tree;
+            tree = saved_tree;
+            saved_tree = nullptr;
         }
-        if (ImGui::Button("Rescale Color")){
-        
+        if (ImGui::Button("Revert To Last")){
+            delete tree;
+            tree = last_tree;
+            last_tree = nullptr;
         }
         if (ImGui::CollapsingHeader("Progress")) {
             ImGui::Text("Render Progress: ");
             ImGui::ProgressBar(getRenderProgress());
         }
+        ImGui::Text("Tree %p, Saved %p, Last %p", tree, saved_tree, last_tree);
+        ImGui::Text("Eval %f", GeneticTree::evaluate(pixels));
     }
     
     void Program::regenTreeDisplay() {
@@ -61,7 +75,7 @@ namespace parks::genetic {
             n.id = node->op;
             n.index = i;
             n.selected = false;
-            n.pos = {(float)i * 200, 0};
+            n.pos = {(float)i * 100, 0};
             n.inputs[0] = {"In", 1};
             n.outputs[0] = {"Left", 1};
             n.outputs[1] = {"Right", 1};
@@ -82,8 +96,12 @@ namespace parks::genetic {
             {
                 if (ImNodes::Ez::BeginNode(&node, ("H: " + std::to_string(node.height) + " | I: " + std::to_string(node.index) + " : " + functions[node.id].name).c_str(), &node.pos, &node.selected))
                 {
-                    ImNodes::Ez::InputSlots(node.inputs, 1);
-                    ImNodes::Ez::OutputSlots(node.outputs, 2);
+                    if(functions[node.id].allowsArgument())
+                        ImGui::Text("Left Tree: %d", GeneticTree::left(node.index));
+                    if (functions[node.id].bothArgument() || functions[node.id].dontCareArgument())
+                        ImGui::Text("Right Tree: %d", GeneticTree::right(node.index));
+                    //ImNodes::Ez::InputSlots(node.inputs, 1);
+                    //ImNodes::Ez::OutputSlots(node.outputs, 2);
                     ImNodes::Ez::EndNode();
                 }
 //                auto p = GeneticTree::parent(node.index);
@@ -103,18 +121,25 @@ namespace parks::genetic {
         ImGui::End();
     }
     
-    void Program::processImage() {
+    void GeneticTree::processImage(unsigned char* pixels) {
         for (unsigned int i = 0; i < WIDTH; i++) {
             for (unsigned int j = 0; j < HEIGHT; j++){
                 auto pos = getPixelPosition(i, j);
                 
                 //auto out = functions[FunctionID::COLOR_NOISE].call({ARGS_BOTH, Color((double)i / WIDTH), Color((double)j / HEIGHT)}, set);
                 
-                auto out = tree->execute((double)i / WIDTH, (double)j / HEIGHT);
+                auto out = execute((double)i / WIDTH, (double)j / HEIGHT);
                 
-                pixels[pos] = (unsigned char)(out.r * 255);
-                pixels[pos + 1] = (unsigned char) (out.g * 255);
-                pixels[pos + 2] = (unsigned char) (out.b * 255);
+                auto r = (unsigned char)(out.r * 255);
+                auto g = (unsigned char) (out.g * 255);
+                auto b = (unsigned char) (out.b * 255);
+                
+                if (out.bw)
+                    g = b = r;
+                
+                pixels[pos] = r;
+                pixels[pos + 1] = g;
+                pixels[pos + 2] = b;
             }
         }
     }
@@ -317,4 +342,157 @@ namespace parks::genetic {
         return std::max(leftSize, rightSize) + 1;
     }
     
+    void GeneticTree::crossover(GeneticTree* other) {
+        // one point crossover for now but a better crossover system is TODO!
+        auto pt = std::min(subtreeSize(0), other->subtreeSize(0));
+        auto n = randomInt(std::min(pt, 1), pt);
+        
+        auto old1 = moveSubtree(n);
+        auto old2 = other->moveSubtree(n);
+        
+        insertSubtree(n, old2.first, old2.second);
+        other->insertSubtree(n, old1.first, old1.second);
+        
+        delete[] old1.first;
+        delete[] old2.first;
+    }
+    
+    GeneticTree* GeneticTree::breed(GeneticTree* parent1, GeneticTree* parent2) {
+        if (chance(60))
+            parent1->crossover(parent2);
+        
+        return nullptr;
+    }
+    
+    std::pair<GeneticNode**, size_t> GeneticTree::moveSubtree(int n) {
+        auto** newNodes = new GeneticNode*[size];
+        for (int i = 0; i < size; i++)
+            newNodes[i] = nullptr;
+        
+        std::queue<int> nodesToMove;
+        nodesToMove.push(n);
+        while (!nodesToMove.empty()){
+            auto node = nodesToMove.front();
+            nodesToMove.pop();
+            
+            if (node >= size)
+                continue;
+            
+            if (nodes[node] != nullptr) {
+                newNodes[node] = nodes[node];
+                nodes[node] = nullptr;
+            }
+            
+            nodesToMove.push(left(node));
+            nodesToMove.push(right(node));
+        }
+        
+        return {newNodes, size};
+    }
+    
+    void GeneticTree::insertSubtree(int n, GeneticNode** tree, size_t s) {
+        std::queue<int> nodesToMove;
+        nodesToMove.push(n);
+        while (!nodesToMove.empty()){
+            auto node = nodesToMove.front();
+            nodesToMove.pop();
+            
+            if (node >= size || (size_t)node >= s)
+                continue;
+            
+            if (nodes[node] != nullptr) {
+                // for some reason the subtree still exists, we should remove these nodes to prevent leaking of memory
+                delete nodes[node];
+            }
+            
+            // we take ownership of the subtree
+            nodes[node] = tree[node];
+            tree[node] = nullptr;
+            
+            nodesToMove.push(left(node));
+            nodesToMove.push(right(node));
+        }
+    }
+    
+    double GeneticTree::evaluate() {
+        auto* pixels = new unsigned char[WIDTH * HEIGHT * CHANNELS];
+        processImage(pixels);
+        auto eval = evaluate(pixels);
+        delete[] pixels;
+        return eval;
+    }
+    
+    double GeneticTree::similarity(const unsigned char* pixels, unsigned int x, unsigned int y, int size){
+        int same = 0;
+        int count = 0;
+        for (int i = -size+1; i < size; i++){
+            for (int j = -size+1; j < size; j++){
+                int nx = (int)x + i;
+                int ny = (int)y + j;
+                if (nx >= 0 && nx < (int)WIDTH && ny >= 0 && ny < (int)HEIGHT) {
+                    int fx = size + i;
+                    int fy = size + j;
+                    if (fx < 0)
+                        fx = 0;
+                    if (fy < 0)
+                        fy = 0;
+                    auto pos = getPixelPosition(x + i, y + j);
+                    auto fpos = getPixelPosition(fx, fy);
+                    
+                    if (pixels[fpos] == pixels[pos] && pixels[fpos + 1] == pixels[pos + 1] && pixels[fpos + 2] == pixels[pos + 2])
+                        same++;
+                    
+                    count++;
+                }
+            }
+        }
+        if (count == 0)
+            return 0;
+        return (double)same / (double)count;
+    }
+    
+    double GeneticTree::evaluate(const unsigned char* pixels) {
+        double val = 0;
+        for (unsigned int i = 0; i < WIDTH; i++){
+            for (unsigned int j = 0; j < HEIGHT; j++){
+                auto pos = getPixelPosition(i, j);
+                
+                auto r = pixels[pos];
+                auto g = pixels[pos + 1];
+                auto b = pixels[pos + 2];
+                
+                val -= similarity(pixels, i, j, 3);
+                val -= aroundSimilarity(pixels, i, j, 5);
+
+                val += (r / 255.0 + g / 255.0 + b / 255.0) / (WIDTH * HEIGHT * CHANNELS);
+            }
+        }
+        return val;
+    }
+
+    double GeneticTree::aroundSimilarity(const unsigned char *pixels, unsigned int x, unsigned int y, int size) {
+        int same = 0;
+        int count = 0;
+        auto fpos = getPixelPosition(x, y);
+        for (int i = -size+1; i < size; i++){
+            for (int j = -size+1; j < size; j++){
+                if (i == 0 && j == 0)
+                    continue;
+                int nx = (int)x + i;
+                int ny = (int)y + j;
+                if (nx >= 0 && nx < (int)WIDTH && ny >= 0 && ny < (int)HEIGHT) {
+                    auto pos = getPixelPosition(x + i, y + j);
+
+                    if (pixels[fpos] == pixels[pos] && pixels[fpos + 1] == pixels[pos + 1] && pixels[fpos + 2] == pixels[pos + 2])
+                        same++;
+
+                    count++;
+                }
+            }
+        }
+        if (count == 0)
+            return 0;
+        return (double)same / (double)count;
+    }
+
 }

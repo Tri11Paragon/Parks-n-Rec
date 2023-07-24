@@ -104,6 +104,6 @@ namespace parks {
     
     Engine::~Engine() {
         delete p;
-        BLT_PRINT_PROFILE("Genetic", blt::logging::BLT_NONE, true);
+        BLT_PRINT_PROFILE("Genetic", blt::logging::log_level::NONE, true);
     }
 }

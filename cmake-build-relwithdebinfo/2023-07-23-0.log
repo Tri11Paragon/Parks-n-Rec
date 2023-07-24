@@ -1,0 +1,804 @@
+[20:52:23] [TRACE] (app.h:86) Setting property information (1)
+[20:52:23] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[20:52:23] [TRACE] (app.h:89) Property: 1, Value: 1592481008 (Setting)
+[20:52:23] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[20:52:23] [TRACE] (app.h:95) Dumping values:
+[20:52:23] [TRACE] (app.h:96) ---------------------
+[20:52:23] [TRACE] (app.h:98) Value (0): 0
+[20:52:23] [TRACE] (app.h:98) Value (1): 1592481008
+[20:52:23] [TRACE] (app.h:99) ---------------------
+[20:52:23] [TRACE] (app.h:86) Setting property information (2)
+[20:52:23] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[20:52:23] [TRACE] (app.h:89) Property: 2, Value: 1592483920 (Setting)
+[20:52:23] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:52:23] [TRACE] (app.h:95) Dumping values:
+[20:52:23] [TRACE] (app.h:96) ---------------------
+[20:52:23] [TRACE] (app.h:98) Value (0): 0
+[20:52:23] [TRACE] (app.h:98) Value (1): 1592481008
+[20:52:23] [TRACE] (app.h:98) Value (2): 1592483920
+[20:52:23] [TRACE] (app.h:98) Value (3): 0
+[20:52:23] [TRACE] (app.h:99) ---------------------
+[20:52:23] [TRACE] (app.h:86) Setting property information (3)
+[20:52:23] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[20:52:23] [TRACE] (app.h:89) Property: 3, Value: 1592483216 (Setting)
+[20:52:23] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:52:23] [TRACE] (app.h:95) Dumping values:
+[20:52:23] [TRACE] (app.h:96) ---------------------
+[20:52:23] [TRACE] (app.h:98) Value (0): 0
+[20:52:23] [TRACE] (app.h:98) Value (1): 1592481008
+[20:52:23] [TRACE] (app.h:98) Value (2): 1592483920
+[20:52:23] [TRACE] (app.h:98) Value (3): 1592483216
+[20:52:23] [TRACE] (app.h:99) ---------------------
+[20:52:23] [TRACE] (app.h:86) Setting property information (0)
+[20:52:23] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[20:52:23] [TRACE] (app.h:89) Property: 0, Value: 1592484016 (Setting)
+[20:52:23] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:52:23] [TRACE] (app.h:95) Dumping values:
+[20:52:23] [TRACE] (app.h:96) ---------------------
+[20:52:23] [TRACE] (app.h:98) Value (0): 1592484016
+[20:52:23] [TRACE] (app.h:98) Value (1): 1592481008
+[20:52:23] [TRACE] (app.h:98) Value (2): 1592483920
+[20:52:23] [TRACE] (app.h:98) Value (3): 1592483216
+[20:52:23] [TRACE] (app.h:99) ---------------------
+[20:52:23] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[20:52:23] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[20:52:23] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[20:52:23] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[20:52:23] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[20:52:23] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[20:52:23] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[20:52:23] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[20:52:23] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[20:52:23] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[20:53:26] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[20:53:26] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[20:53:26] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[20:53:26] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[20:53:26] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[20:53:26] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[20:53:26] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[20:54:01] [TRACE] (app.h:86) Setting property information (1)
+[20:54:01] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[20:54:01] [TRACE] (app.h:89) Property: 1, Value: 1203156208 (Setting)
+[20:54:01] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[20:54:01] [TRACE] (app.h:95) Dumping values:
+[20:54:01] [TRACE] (app.h:96) ---------------------
+[20:54:01] [TRACE] (app.h:98) Value (0): 0
+[20:54:01] [TRACE] (app.h:98) Value (1): 1203156208
+[20:54:01] [TRACE] (app.h:99) ---------------------
+[20:54:01] [TRACE] (app.h:86) Setting property information (2)
+[20:54:01] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[20:54:01] [TRACE] (app.h:89) Property: 2, Value: 1203159120 (Setting)
+[20:54:01] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:54:01] [TRACE] (app.h:95) Dumping values:
+[20:54:01] [TRACE] (app.h:96) ---------------------
+[20:54:01] [TRACE] (app.h:98) Value (0): 0
+[20:54:01] [TRACE] (app.h:98) Value (1): 1203156208
+[20:54:01] [TRACE] (app.h:98) Value (2): 1203159120
+[20:54:01] [TRACE] (app.h:98) Value (3): 0
+[20:54:01] [TRACE] (app.h:99) ---------------------
+[20:54:01] [TRACE] (app.h:86) Setting property information (3)
+[20:54:01] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[20:54:01] [TRACE] (app.h:89) Property: 3, Value: 1203158416 (Setting)
+[20:54:01] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:54:01] [TRACE] (app.h:95) Dumping values:
+[20:54:01] [TRACE] (app.h:96) ---------------------
+[20:54:01] [TRACE] (app.h:98) Value (0): 0
+[20:54:01] [TRACE] (app.h:98) Value (1): 1203156208
+[20:54:01] [TRACE] (app.h:98) Value (2): 1203159120
+[20:54:01] [TRACE] (app.h:98) Value (3): 1203158416
+[20:54:01] [TRACE] (app.h:99) ---------------------
+[20:54:01] [TRACE] (app.h:86) Setting property information (0)
+[20:54:01] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[20:54:01] [TRACE] (app.h:89) Property: 0, Value: 1203159216 (Setting)
+[20:54:01] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:54:01] [TRACE] (app.h:95) Dumping values:
+[20:54:01] [TRACE] (app.h:96) ---------------------
+[20:54:01] [TRACE] (app.h:98) Value (0): 1203159216
+[20:54:01] [TRACE] (app.h:98) Value (1): 1203156208
+[20:54:01] [TRACE] (app.h:98) Value (2): 1203159120
+[20:54:01] [TRACE] (app.h:98) Value (3): 1203158416
+[20:54:01] [TRACE] (app.h:99) ---------------------
+[20:54:01] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[20:54:01] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[20:54:01] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[20:54:01] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[20:54:01] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[20:54:01] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[20:54:01] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[20:54:01] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[20:54:01] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[20:57:50] [TRACE] (app.h:86) Setting property information (1)
+[20:57:50] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[20:57:50] [TRACE] (app.h:89) Property: 1, Value: 1433834736 (Setting)
+[20:57:50] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[20:57:50] [TRACE] (app.h:95) Dumping values:
+[20:57:50] [TRACE] (app.h:96) ---------------------
+[20:57:50] [TRACE] (app.h:98) Value (0): 0
+[20:57:50] [TRACE] (app.h:98) Value (1): 1433834736
+[20:57:50] [TRACE] (app.h:99) ---------------------
+[20:57:50] [TRACE] (app.h:86) Setting property information (2)
+[20:57:50] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[20:57:50] [TRACE] (app.h:89) Property: 2, Value: 1433837648 (Setting)
+[20:57:50] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:57:50] [TRACE] (app.h:95) Dumping values:
+[20:57:50] [TRACE] (app.h:96) ---------------------
+[20:57:50] [TRACE] (app.h:98) Value (0): 0
+[20:57:50] [TRACE] (app.h:98) Value (1): 1433834736
+[20:57:50] [TRACE] (app.h:98) Value (2): 1433837648
+[20:57:50] [TRACE] (app.h:98) Value (3): 0
+[20:57:50] [TRACE] (app.h:99) ---------------------
+[20:57:50] [TRACE] (app.h:86) Setting property information (3)
+[20:57:50] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[20:57:50] [TRACE] (app.h:89) Property: 3, Value: 1433836944 (Setting)
+[20:57:50] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:57:50] [TRACE] (app.h:95) Dumping values:
+[20:57:50] [TRACE] (app.h:96) ---------------------
+[20:57:50] [TRACE] (app.h:98) Value (0): 0
+[20:57:50] [TRACE] (app.h:98) Value (1): 1433834736
+[20:57:50] [TRACE] (app.h:98) Value (2): 1433837648
+[20:57:50] [TRACE] (app.h:98) Value (3): 1433836944
+[20:57:50] [TRACE] (app.h:99) ---------------------
+[20:57:50] [TRACE] (app.h:86) Setting property information (0)
+[20:57:50] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[20:57:50] [TRACE] (app.h:89) Property: 0, Value: 1433837744 (Setting)
+[20:57:50] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:57:50] [TRACE] (app.h:95) Dumping values:
+[20:57:50] [TRACE] (app.h:96) ---------------------
+[20:57:50] [TRACE] (app.h:98) Value (0): 1433837744
+[20:57:50] [TRACE] (app.h:98) Value (1): 1433834736
+[20:57:50] [TRACE] (app.h:98) Value (2): 1433837648
+[20:57:50] [TRACE] (app.h:98) Value (3): 1433836944
+[20:57:50] [TRACE] (app.h:99) ---------------------
+[20:57:50] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[20:57:50] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[20:57:50] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[20:57:50] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[20:57:50] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[20:57:50] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[20:57:50] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[20:57:50] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[20:57:50] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[20:59:31] [TRACE] (app.h:86) Setting property information (1)
+[20:59:31] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[20:59:31] [TRACE] (app.h:89) Property: 1, Value: 1433834736 (Setting)
+[20:59:31] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[20:59:31] [TRACE] (app.h:95) Dumping values:
+[20:59:31] [TRACE] (app.h:96) ---------------------
+[20:59:31] [TRACE] (app.h:98) Value (0): 0
+[20:59:31] [TRACE] (app.h:98) Value (1): 1433834736
+[20:59:31] [TRACE] (app.h:99) ---------------------
+[20:59:31] [TRACE] (app.h:86) Setting property information (2)
+[20:59:31] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[20:59:31] [TRACE] (app.h:89) Property: 2, Value: 1433837648 (Setting)
+[20:59:31] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:59:31] [TRACE] (app.h:95) Dumping values:
+[20:59:31] [TRACE] (app.h:96) ---------------------
+[20:59:31] [TRACE] (app.h:98) Value (0): 0
+[20:59:31] [TRACE] (app.h:98) Value (1): 1433834736
+[20:59:31] [TRACE] (app.h:98) Value (2): 1433837648
+[20:59:31] [TRACE] (app.h:98) Value (3): 0
+[20:59:31] [TRACE] (app.h:99) ---------------------
+[20:59:31] [TRACE] (app.h:86) Setting property information (3)
+[20:59:31] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[20:59:31] [TRACE] (app.h:89) Property: 3, Value: 1433836944 (Setting)
+[20:59:31] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:59:31] [TRACE] (app.h:95) Dumping values:
+[20:59:31] [TRACE] (app.h:96) ---------------------
+[20:59:31] [TRACE] (app.h:98) Value (0): 0
+[20:59:31] [TRACE] (app.h:98) Value (1): 1433834736
+[20:59:31] [TRACE] (app.h:98) Value (2): 1433837648
+[20:59:31] [TRACE] (app.h:98) Value (3): 1433836944
+[20:59:31] [TRACE] (app.h:99) ---------------------
+[20:59:31] [TRACE] (app.h:86) Setting property information (0)
+[20:59:31] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[20:59:31] [TRACE] (app.h:89) Property: 0, Value: 1433837744 (Setting)
+[20:59:31] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[20:59:31] [TRACE] (app.h:95) Dumping values:
+[20:59:31] [TRACE] (app.h:96) ---------------------
+[20:59:31] [TRACE] (app.h:98) Value (0): 1433837744
+[20:59:31] [TRACE] (app.h:98) Value (1): 1433834736
+[20:59:31] [TRACE] (app.h:98) Value (2): 1433837648
+[20:59:31] [TRACE] (app.h:98) Value (3): 1433836944
+[20:59:31] [TRACE] (app.h:99) ---------------------
+[20:59:31] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[20:59:31] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[20:59:31] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[20:59:31] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[20:59:31] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[20:59:31] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[20:59:31] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[20:59:31] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[20:59:31] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:01:54] [TRACE] (app.h:86) Setting property information (1)
+[21:01:54] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[21:01:54] [TRACE] (app.h:89) Property: 1, Value: 1433834736 (Setting)
+[21:01:54] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[21:01:54] [TRACE] (app.h:95) Dumping values:
+[21:01:54] [TRACE] (app.h:96) ---------------------
+[21:01:54] [TRACE] (app.h:98) Value (0): 0
+[21:01:54] [TRACE] (app.h:98) Value (1): 1433834736
+[21:01:54] [TRACE] (app.h:99) ---------------------
+[21:01:54] [TRACE] (app.h:86) Setting property information (2)
+[21:01:54] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[21:01:54] [TRACE] (app.h:89) Property: 2, Value: 1433837648 (Setting)
+[21:01:54] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:01:54] [TRACE] (app.h:95) Dumping values:
+[21:01:54] [TRACE] (app.h:96) ---------------------
+[21:01:54] [TRACE] (app.h:98) Value (0): 0
+[21:01:54] [TRACE] (app.h:98) Value (1): 1433834736
+[21:01:54] [TRACE] (app.h:98) Value (2): 1433837648
+[21:01:54] [TRACE] (app.h:98) Value (3): 0
+[21:01:54] [TRACE] (app.h:99) ---------------------
+[21:01:54] [TRACE] (app.h:86) Setting property information (3)
+[21:01:54] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:01:54] [TRACE] (app.h:89) Property: 3, Value: 1433836944 (Setting)
+[21:01:54] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:01:54] [TRACE] (app.h:95) Dumping values:
+[21:01:54] [TRACE] (app.h:96) ---------------------
+[21:01:54] [TRACE] (app.h:98) Value (0): 0
+[21:01:54] [TRACE] (app.h:98) Value (1): 1433834736
+[21:01:54] [TRACE] (app.h:98) Value (2): 1433837648
+[21:01:54] [TRACE] (app.h:98) Value (3): 1433836944
+[21:01:54] [TRACE] (app.h:99) ---------------------
+[21:01:54] [TRACE] (app.h:86) Setting property information (0)
+[21:01:54] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:01:54] [TRACE] (app.h:89) Property: 0, Value: 1433837744 (Setting)
+[21:01:54] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:01:54] [TRACE] (app.h:95) Dumping values:
+[21:01:54] [TRACE] (app.h:96) ---------------------
+[21:01:54] [TRACE] (app.h:98) Value (0): 1433837744
+[21:01:54] [TRACE] (app.h:98) Value (1): 1433834736
+[21:01:54] [TRACE] (app.h:98) Value (2): 1433837648
+[21:01:54] [TRACE] (app.h:98) Value (3): 1433836944
+[21:01:54] [TRACE] (app.h:99) ---------------------
+[21:01:54] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[21:01:54] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[21:01:54] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[21:01:54] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[21:01:54] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[21:01:54] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[21:01:54] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[21:01:54] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[21:01:54] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:05:09] [TRACE] (app.h:86) Setting property information (1)
+[21:05:09] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[21:05:09] [TRACE] (app.h:89) Property: 1, Value: 1433834736 (Setting)
+[21:05:09] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[21:05:09] [TRACE] (app.h:95) Dumping values:
+[21:05:09] [TRACE] (app.h:96) ---------------------
+[21:05:09] [TRACE] (app.h:98) Value (0): 0
+[21:05:09] [TRACE] (app.h:98) Value (1): 1433834736
+[21:05:09] [TRACE] (app.h:99) ---------------------
+[21:05:09] [TRACE] (app.h:86) Setting property information (2)
+[21:05:09] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[21:05:09] [TRACE] (app.h:89) Property: 2, Value: 1433837648 (Setting)
+[21:05:09] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:05:09] [TRACE] (app.h:95) Dumping values:
+[21:05:09] [TRACE] (app.h:96) ---------------------
+[21:05:09] [TRACE] (app.h:98) Value (0): 0
+[21:05:09] [TRACE] (app.h:98) Value (1): 1433834736
+[21:05:09] [TRACE] (app.h:98) Value (2): 1433837648
+[21:05:09] [TRACE] (app.h:98) Value (3): 0
+[21:05:09] [TRACE] (app.h:99) ---------------------
+[21:05:09] [TRACE] (app.h:86) Setting property information (3)
+[21:05:09] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:05:09] [TRACE] (app.h:89) Property: 3, Value: 1433836944 (Setting)
+[21:05:09] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:05:09] [TRACE] (app.h:95) Dumping values:
+[21:05:09] [TRACE] (app.h:96) ---------------------
+[21:05:09] [TRACE] (app.h:98) Value (0): 0
+[21:05:09] [TRACE] (app.h:98) Value (1): 1433834736
+[21:05:09] [TRACE] (app.h:98) Value (2): 1433837648
+[21:05:09] [TRACE] (app.h:98) Value (3): 1433836944
+[21:05:09] [TRACE] (app.h:99) ---------------------
+[21:05:09] [TRACE] (app.h:86) Setting property information (0)
+[21:05:09] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:05:09] [TRACE] (app.h:89) Property: 0, Value: 1433837744 (Setting)
+[21:05:09] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:05:09] [TRACE] (app.h:95) Dumping values:
+[21:05:09] [TRACE] (app.h:96) ---------------------
+[21:05:09] [TRACE] (app.h:98) Value (0): 1433837744
+[21:05:09] [TRACE] (app.h:98) Value (1): 1433834736
+[21:05:09] [TRACE] (app.h:98) Value (2): 1433837648
+[21:05:09] [TRACE] (app.h:98) Value (3): 1433836944
+[21:05:09] [TRACE] (app.h:99) ---------------------
+[21:05:09] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[21:05:09] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[21:05:09] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[21:05:09] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[21:05:09] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[21:05:09] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[21:05:09] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[21:05:10] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[21:05:10] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:05:10] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[21:06:27] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[21:06:27] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[21:06:27] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[21:06:27] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[21:06:27] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[21:06:27] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:06:27] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:07:28] [TRACE] (app.h:86) Setting property information (1)
+[21:07:28] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[21:07:28] [TRACE] (app.h:89) Property: 1, Value: 16233712 (Setting)
+[21:07:28] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[21:07:28] [TRACE] (app.h:95) Dumping values:
+[21:07:28] [TRACE] (app.h:96) ---------------------
+[21:07:28] [TRACE] (app.h:98) Value (0): 0
+[21:07:28] [TRACE] (app.h:98) Value (1): 16233712
+[21:07:28] [TRACE] (app.h:99) ---------------------
+[21:07:28] [TRACE] (app.h:86) Setting property information (2)
+[21:07:28] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[21:07:28] [TRACE] (app.h:89) Property: 2, Value: 16236528 (Setting)
+[21:07:28] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:07:28] [TRACE] (app.h:95) Dumping values:
+[21:07:28] [TRACE] (app.h:96) ---------------------
+[21:07:28] [TRACE] (app.h:98) Value (0): 0
+[21:07:28] [TRACE] (app.h:98) Value (1): 16233712
+[21:07:28] [TRACE] (app.h:98) Value (2): 16236528
+[21:07:28] [TRACE] (app.h:98) Value (3): 0
+[21:07:28] [TRACE] (app.h:99) ---------------------
+[21:07:28] [TRACE] (app.h:86) Setting property information (3)
+[21:07:28] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:07:28] [TRACE] (app.h:89) Property: 3, Value: 16235920 (Setting)
+[21:07:28] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:07:28] [TRACE] (app.h:95) Dumping values:
+[21:07:28] [TRACE] (app.h:96) ---------------------
+[21:07:28] [TRACE] (app.h:98) Value (0): 0
+[21:07:28] [TRACE] (app.h:98) Value (1): 16233712
+[21:07:28] [TRACE] (app.h:98) Value (2): 16236528
+[21:07:28] [TRACE] (app.h:98) Value (3): 16235920
+[21:07:28] [TRACE] (app.h:99) ---------------------
+[21:07:28] [TRACE] (app.h:86) Setting property information (0)
+[21:07:28] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:07:28] [TRACE] (app.h:89) Property: 0, Value: 16236592 (Setting)
+[21:07:28] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:07:28] [TRACE] (app.h:95) Dumping values:
+[21:07:28] [TRACE] (app.h:96) ---------------------
+[21:07:28] [TRACE] (app.h:98) Value (0): 16236592
+[21:07:28] [TRACE] (app.h:98) Value (1): 16233712
+[21:07:28] [TRACE] (app.h:98) Value (2): 16236528
+[21:07:28] [TRACE] (app.h:98) Value (3): 16235920
+[21:07:28] [TRACE] (app.h:99) ---------------------
+[21:07:28] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[21:07:28] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[21:07:28] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[21:07:28] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[21:07:28] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[21:07:28] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[21:07:28] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[21:07:29] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[21:07:29] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:07:29] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[21:07:48] [DEBUG] (program_v3.cpp:349) Crossover called at 5
+[21:07:54] [DEBUG] (program_v3.cpp:349) Crossover called at 3
+[21:08:01] [DEBUG] (program_v3.cpp:349) Crossover called at 2
+[21:08:30] [DEBUG] (program_v3.cpp:349) Crossover called at 2
+[21:08:33] [DEBUG] (program_v3.cpp:349) Crossover called at 4
+[21:08:37] [DEBUG] (program_v3.cpp:349) Crossover called at 1
+[21:08:39] [DEBUG] (program_v3.cpp:349) Crossover called at 4
+[21:08:41] [DEBUG] (program_v3.cpp:349) Crossover called at 2
+[21:08:43] [DEBUG] (program_v3.cpp:349) Crossover called at 3
+[21:08:45] [DEBUG] (program_v3.cpp:349) Crossover called at 2
+[21:08:48] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[21:08:48] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[21:08:48] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[21:08:48] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[21:08:48] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[21:08:48] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:08:48] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:18:09] [TRACE] (app.h:86) Setting property information (1)
+[21:18:09] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[21:18:09] [TRACE] (app.h:89) Property: 1, Value: 693748976 (Setting)
+[21:18:09] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[21:18:09] [TRACE] (app.h:95) Dumping values:
+[21:18:09] [TRACE] (app.h:96) ---------------------
+[21:18:09] [TRACE] (app.h:98) Value (0): 0
+[21:18:09] [TRACE] (app.h:98) Value (1): 693748976
+[21:18:09] [TRACE] (app.h:99) ---------------------
+[21:18:09] [TRACE] (app.h:86) Setting property information (2)
+[21:18:09] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[21:18:09] [TRACE] (app.h:89) Property: 2, Value: 693751792 (Setting)
+[21:18:09] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:18:09] [TRACE] (app.h:95) Dumping values:
+[21:18:09] [TRACE] (app.h:96) ---------------------
+[21:18:09] [TRACE] (app.h:98) Value (0): 0
+[21:18:09] [TRACE] (app.h:98) Value (1): 693748976
+[21:18:09] [TRACE] (app.h:98) Value (2): 693751792
+[21:18:09] [TRACE] (app.h:98) Value (3): 0
+[21:18:09] [TRACE] (app.h:99) ---------------------
+[21:18:09] [TRACE] (app.h:86) Setting property information (3)
+[21:18:09] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:18:09] [TRACE] (app.h:89) Property: 3, Value: 693751184 (Setting)
+[21:18:09] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:18:09] [TRACE] (app.h:95) Dumping values:
+[21:18:09] [TRACE] (app.h:96) ---------------------
+[21:18:09] [TRACE] (app.h:98) Value (0): 0
+[21:18:09] [TRACE] (app.h:98) Value (1): 693748976
+[21:18:09] [TRACE] (app.h:98) Value (2): 693751792
+[21:18:09] [TRACE] (app.h:98) Value (3): 693751184
+[21:18:09] [TRACE] (app.h:99) ---------------------
+[21:18:09] [TRACE] (app.h:86) Setting property information (0)
+[21:18:09] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:18:09] [TRACE] (app.h:89) Property: 0, Value: 693751856 (Setting)
+[21:18:09] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:18:09] [TRACE] (app.h:95) Dumping values:
+[21:18:09] [TRACE] (app.h:96) ---------------------
+[21:18:09] [TRACE] (app.h:98) Value (0): 693751856
+[21:18:09] [TRACE] (app.h:98) Value (1): 693748976
+[21:18:09] [TRACE] (app.h:98) Value (2): 693751792
+[21:18:09] [TRACE] (app.h:98) Value (3): 693751184
+[21:18:09] [TRACE] (app.h:99) ---------------------
+[21:18:09] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[21:18:09] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[21:18:09] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[21:18:09] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[21:18:09] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[21:18:09] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[21:18:09] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[21:18:09] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[21:18:09] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:18:09] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[21:19:08] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[21:19:08] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[21:19:08] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[21:19:08] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[21:19:08] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[21:19:08] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:19:08] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:19:36] [TRACE] (app.h:86) Setting property information (1)
+[21:19:36] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[21:19:36] [TRACE] (app.h:89) Property: 1, Value: 533480688 (Setting)
+[21:19:36] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[21:19:36] [TRACE] (app.h:95) Dumping values:
+[21:19:36] [TRACE] (app.h:96) ---------------------
+[21:19:36] [TRACE] (app.h:98) Value (0): 0
+[21:19:36] [TRACE] (app.h:98) Value (1): 533480688
+[21:19:36] [TRACE] (app.h:99) ---------------------
+[21:19:36] [TRACE] (app.h:86) Setting property information (2)
+[21:19:36] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[21:19:36] [TRACE] (app.h:89) Property: 2, Value: 533483504 (Setting)
+[21:19:36] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:19:36] [TRACE] (app.h:95) Dumping values:
+[21:19:36] [TRACE] (app.h:96) ---------------------
+[21:19:36] [TRACE] (app.h:98) Value (0): 0
+[21:19:36] [TRACE] (app.h:98) Value (1): 533480688
+[21:19:36] [TRACE] (app.h:98) Value (2): 533483504
+[21:19:36] [TRACE] (app.h:98) Value (3): 0
+[21:19:36] [TRACE] (app.h:99) ---------------------
+[21:19:36] [TRACE] (app.h:86) Setting property information (3)
+[21:19:36] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:19:36] [TRACE] (app.h:89) Property: 3, Value: 533482896 (Setting)
+[21:19:36] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:19:36] [TRACE] (app.h:95) Dumping values:
+[21:19:36] [TRACE] (app.h:96) ---------------------
+[21:19:36] [TRACE] (app.h:98) Value (0): 0
+[21:19:36] [TRACE] (app.h:98) Value (1): 533480688
+[21:19:36] [TRACE] (app.h:98) Value (2): 533483504
+[21:19:36] [TRACE] (app.h:98) Value (3): 533482896
+[21:19:36] [TRACE] (app.h:99) ---------------------
+[21:19:36] [TRACE] (app.h:86) Setting property information (0)
+[21:19:36] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:19:36] [TRACE] (app.h:89) Property: 0, Value: 533483568 (Setting)
+[21:19:36] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:19:36] [TRACE] (app.h:95) Dumping values:
+[21:19:36] [TRACE] (app.h:96) ---------------------
+[21:19:36] [TRACE] (app.h:98) Value (0): 533483568
+[21:19:36] [TRACE] (app.h:98) Value (1): 533480688
+[21:19:36] [TRACE] (app.h:98) Value (2): 533483504
+[21:19:36] [TRACE] (app.h:98) Value (3): 533482896
+[21:19:36] [TRACE] (app.h:99) ---------------------
+[21:19:36] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[21:19:36] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[21:19:36] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[21:19:36] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[21:19:36] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[21:19:37] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[21:19:37] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[21:19:37] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[21:19:37] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:19:37] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[21:19:50] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[21:19:50] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[21:19:50] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[21:19:50] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[21:19:50] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[21:19:50] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:19:50] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:21:26] [TRACE] (app.h:86) Setting property information (1)
+[21:21:26] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[21:21:26] [TRACE] (app.h:89) Property: 1, Value: 2066519280 (Setting)
+[21:21:26] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[21:21:26] [TRACE] (app.h:95) Dumping values:
+[21:21:26] [TRACE] (app.h:96) ---------------------
+[21:21:26] [TRACE] (app.h:98) Value (0): 0
+[21:21:26] [TRACE] (app.h:98) Value (1): 2066519280
+[21:21:26] [TRACE] (app.h:99) ---------------------
+[21:21:26] [TRACE] (app.h:86) Setting property information (2)
+[21:21:26] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[21:21:26] [TRACE] (app.h:89) Property: 2, Value: 2066522192 (Setting)
+[21:21:26] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:21:26] [TRACE] (app.h:95) Dumping values:
+[21:21:26] [TRACE] (app.h:96) ---------------------
+[21:21:26] [TRACE] (app.h:98) Value (0): 0
+[21:21:26] [TRACE] (app.h:98) Value (1): 2066519280
+[21:21:26] [TRACE] (app.h:98) Value (2): 2066522192
+[21:21:26] [TRACE] (app.h:98) Value (3): 0
+[21:21:26] [TRACE] (app.h:99) ---------------------
+[21:21:26] [TRACE] (app.h:86) Setting property information (3)
+[21:21:26] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:21:26] [TRACE] (app.h:89) Property: 3, Value: 2066521488 (Setting)
+[21:21:26] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:21:26] [TRACE] (app.h:95) Dumping values:
+[21:21:26] [TRACE] (app.h:96) ---------------------
+[21:21:26] [TRACE] (app.h:98) Value (0): 0
+[21:21:26] [TRACE] (app.h:98) Value (1): 2066519280
+[21:21:26] [TRACE] (app.h:98) Value (2): 2066522192
+[21:21:26] [TRACE] (app.h:98) Value (3): 2066521488
+[21:21:26] [TRACE] (app.h:99) ---------------------
+[21:21:26] [TRACE] (app.h:86) Setting property information (0)
+[21:21:26] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:21:26] [TRACE] (app.h:89) Property: 0, Value: 2066522288 (Setting)
+[21:21:26] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:21:26] [TRACE] (app.h:95) Dumping values:
+[21:21:26] [TRACE] (app.h:96) ---------------------
+[21:21:26] [TRACE] (app.h:98) Value (0): 2066522288
+[21:21:26] [TRACE] (app.h:98) Value (1): 2066519280
+[21:21:26] [TRACE] (app.h:98) Value (2): 2066522192
+[21:21:26] [TRACE] (app.h:98) Value (3): 2066521488
+[21:21:26] [TRACE] (app.h:99) ---------------------
+[21:21:26] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[21:21:26] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[21:21:26] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[21:21:26] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[21:21:26] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[21:21:26] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[21:21:26] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[21:21:26] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[21:21:26] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:21:26] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[21:21:57] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[21:21:57] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[21:21:57] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[21:21:57] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[21:21:57] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[21:21:57] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:21:57] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:31:36] [TRACE] (app.h:86) Setting property information (1)
+[21:31:36] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[21:31:36] [TRACE] (app.h:89) Property: 1, Value: 288802032 (Setting)
+[21:31:36] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[21:31:36] [TRACE] (app.h:95) Dumping values:
+[21:31:36] [TRACE] (app.h:96) ---------------------
+[21:31:36] [TRACE] (app.h:98) Value (0): 0
+[21:31:36] [TRACE] (app.h:98) Value (1): 288802032
+[21:31:36] [TRACE] (app.h:99) ---------------------
+[21:31:36] [TRACE] (app.h:86) Setting property information (2)
+[21:31:36] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[21:31:36] [TRACE] (app.h:89) Property: 2, Value: 288804848 (Setting)
+[21:31:36] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:31:36] [TRACE] (app.h:95) Dumping values:
+[21:31:36] [TRACE] (app.h:96) ---------------------
+[21:31:36] [TRACE] (app.h:98) Value (0): 0
+[21:31:36] [TRACE] (app.h:98) Value (1): 288802032
+[21:31:36] [TRACE] (app.h:98) Value (2): 288804848
+[21:31:36] [TRACE] (app.h:98) Value (3): 0
+[21:31:36] [TRACE] (app.h:99) ---------------------
+[21:31:36] [TRACE] (app.h:86) Setting property information (3)
+[21:31:36] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:31:36] [TRACE] (app.h:89) Property: 3, Value: 288804240 (Setting)
+[21:31:36] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:31:36] [TRACE] (app.h:95) Dumping values:
+[21:31:36] [TRACE] (app.h:96) ---------------------
+[21:31:36] [TRACE] (app.h:98) Value (0): 0
+[21:31:36] [TRACE] (app.h:98) Value (1): 288802032
+[21:31:36] [TRACE] (app.h:98) Value (2): 288804848
+[21:31:36] [TRACE] (app.h:98) Value (3): 288804240
+[21:31:36] [TRACE] (app.h:99) ---------------------
+[21:31:36] [TRACE] (app.h:86) Setting property information (0)
+[21:31:36] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:31:36] [TRACE] (app.h:89) Property: 0, Value: 288804912 (Setting)
+[21:31:36] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:31:36] [TRACE] (app.h:95) Dumping values:
+[21:31:36] [TRACE] (app.h:96) ---------------------
+[21:31:36] [TRACE] (app.h:98) Value (0): 288804912
+[21:31:36] [TRACE] (app.h:98) Value (1): 288802032
+[21:31:36] [TRACE] (app.h:98) Value (2): 288804848
+[21:31:36] [TRACE] (app.h:98) Value (3): 288804240
+[21:31:36] [TRACE] (app.h:99) ---------------------
+[21:31:36] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[21:31:36] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[21:31:36] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[21:31:36] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[21:31:36] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[21:31:36] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[21:31:36] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[21:31:36] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[21:31:36] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:31:36] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[21:33:20] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[21:33:20] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[21:33:20] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[21:33:20] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[21:33:20] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[21:33:20] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:33:20] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:33:33] [TRACE] (app.h:86) Setting property information (1)
+[21:33:33] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[21:33:33] [TRACE] (app.h:89) Property: 1, Value: 1679770864 (Setting)
+[21:33:33] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[21:33:33] [TRACE] (app.h:95) Dumping values:
+[21:33:33] [TRACE] (app.h:96) ---------------------
+[21:33:33] [TRACE] (app.h:98) Value (0): 0
+[21:33:33] [TRACE] (app.h:98) Value (1): 1679770864
+[21:33:33] [TRACE] (app.h:99) ---------------------
+[21:33:33] [TRACE] (app.h:86) Setting property information (2)
+[21:33:33] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[21:33:33] [TRACE] (app.h:89) Property: 2, Value: 1679773776 (Setting)
+[21:33:33] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:33:33] [TRACE] (app.h:95) Dumping values:
+[21:33:33] [TRACE] (app.h:96) ---------------------
+[21:33:33] [TRACE] (app.h:98) Value (0): 0
+[21:33:33] [TRACE] (app.h:98) Value (1): 1679770864
+[21:33:33] [TRACE] (app.h:98) Value (2): 1679773776
+[21:33:33] [TRACE] (app.h:98) Value (3): 0
+[21:33:33] [TRACE] (app.h:99) ---------------------
+[21:33:33] [TRACE] (app.h:86) Setting property information (3)
+[21:33:33] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:33:33] [TRACE] (app.h:89) Property: 3, Value: 1679773072 (Setting)
+[21:33:33] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:33:33] [TRACE] (app.h:95) Dumping values:
+[21:33:33] [TRACE] (app.h:96) ---------------------
+[21:33:33] [TRACE] (app.h:98) Value (0): 0
+[21:33:33] [TRACE] (app.h:98) Value (1): 1679770864
+[21:33:33] [TRACE] (app.h:98) Value (2): 1679773776
+[21:33:33] [TRACE] (app.h:98) Value (3): 1679773072
+[21:33:33] [TRACE] (app.h:99) ---------------------
+[21:33:33] [TRACE] (app.h:86) Setting property information (0)
+[21:33:33] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:33:33] [TRACE] (app.h:89) Property: 0, Value: 1679773872 (Setting)
+[21:33:33] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:33:33] [TRACE] (app.h:95) Dumping values:
+[21:33:33] [TRACE] (app.h:96) ---------------------
+[21:33:33] [TRACE] (app.h:98) Value (0): 1679773872
+[21:33:33] [TRACE] (app.h:98) Value (1): 1679770864
+[21:33:33] [TRACE] (app.h:98) Value (2): 1679773776
+[21:33:33] [TRACE] (app.h:98) Value (3): 1679773072
+[21:33:33] [TRACE] (app.h:99) ---------------------
+[21:33:33] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[21:33:33] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[21:33:33] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[21:33:33] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[21:33:33] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[21:33:33] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[21:33:33] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[21:33:33] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[21:33:33] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:33:33] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[21:35:53] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[21:35:53] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[21:35:53] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[21:35:53] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[21:35:53] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[21:35:53] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:35:53] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:45:42] [TRACE] (app.h:86) Setting property information (1)
+[21:45:42] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[21:45:42] [TRACE] (app.h:89) Property: 1, Value: -1931324176 (Setting)
+[21:45:42] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[21:45:42] [TRACE] (app.h:95) Dumping values:
+[21:45:42] [TRACE] (app.h:96) ---------------------
+[21:45:42] [TRACE] (app.h:98) Value (0): 0
+[21:45:42] [TRACE] (app.h:98) Value (1): -1931324176
+[21:45:42] [TRACE] (app.h:99) ---------------------
+[21:45:42] [TRACE] (app.h:86) Setting property information (2)
+[21:45:42] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[21:45:42] [TRACE] (app.h:89) Property: 2, Value: -1931321264 (Setting)
+[21:45:42] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:45:42] [TRACE] (app.h:95) Dumping values:
+[21:45:42] [TRACE] (app.h:96) ---------------------
+[21:45:42] [TRACE] (app.h:98) Value (0): 0
+[21:45:42] [TRACE] (app.h:98) Value (1): -1931324176
+[21:45:42] [TRACE] (app.h:98) Value (2): -1931321264
+[21:45:42] [TRACE] (app.h:98) Value (3): 0
+[21:45:42] [TRACE] (app.h:99) ---------------------
+[21:45:42] [TRACE] (app.h:86) Setting property information (3)
+[21:45:42] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:45:42] [TRACE] (app.h:89) Property: 3, Value: -1931321968 (Setting)
+[21:45:42] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:45:42] [TRACE] (app.h:95) Dumping values:
+[21:45:42] [TRACE] (app.h:96) ---------------------
+[21:45:42] [TRACE] (app.h:98) Value (0): 0
+[21:45:42] [TRACE] (app.h:98) Value (1): -1931324176
+[21:45:42] [TRACE] (app.h:98) Value (2): -1931321264
+[21:45:42] [TRACE] (app.h:98) Value (3): -1931321968
+[21:45:42] [TRACE] (app.h:99) ---------------------
+[21:45:42] [TRACE] (app.h:86) Setting property information (0)
+[21:45:42] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:45:42] [TRACE] (app.h:89) Property: 0, Value: -1931321168 (Setting)
+[21:45:42] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:45:42] [TRACE] (app.h:95) Dumping values:
+[21:45:42] [TRACE] (app.h:96) ---------------------
+[21:45:42] [TRACE] (app.h:98) Value (0): -1931321168
+[21:45:42] [TRACE] (app.h:98) Value (1): -1931324176
+[21:45:42] [TRACE] (app.h:98) Value (2): -1931321264
+[21:45:42] [TRACE] (app.h:98) Value (3): -1931321968
+[21:45:42] [TRACE] (app.h:99) ---------------------
+[21:45:42] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[21:45:42] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[21:45:42] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[21:45:42] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[21:45:42] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[21:45:42] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[21:45:42] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[21:45:42] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[21:45:42] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:45:42] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[21:50:23] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[21:50:23] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[21:50:23] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[21:50:23] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[21:50:23] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[21:50:23] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:50:23] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:50:54] [TRACE] (app.h:86) Setting property information (1)
+[21:50:54] [TRACE] (app.h:87) Values size / capacity (before): 0/0
+[21:50:54] [TRACE] (app.h:89) Property: 1, Value: 561923312 (Setting)
+[21:50:54] [TRACE] (app.h:93) Values size / capacity (after): 2/2
+[21:50:54] [TRACE] (app.h:95) Dumping values:
+[21:50:54] [TRACE] (app.h:96) ---------------------
+[21:50:54] [TRACE] (app.h:98) Value (0): 0
+[21:50:54] [TRACE] (app.h:98) Value (1): 561923312
+[21:50:54] [TRACE] (app.h:99) ---------------------
+[21:50:54] [TRACE] (app.h:86) Setting property information (2)
+[21:50:54] [TRACE] (app.h:87) Values size / capacity (before): 2/2
+[21:50:54] [TRACE] (app.h:89) Property: 2, Value: 561926128 (Setting)
+[21:50:54] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:50:54] [TRACE] (app.h:95) Dumping values:
+[21:50:54] [TRACE] (app.h:96) ---------------------
+[21:50:54] [TRACE] (app.h:98) Value (0): 0
+[21:50:54] [TRACE] (app.h:98) Value (1): 561923312
+[21:50:54] [TRACE] (app.h:98) Value (2): 561926128
+[21:50:54] [TRACE] (app.h:98) Value (3): 0
+[21:50:54] [TRACE] (app.h:99) ---------------------
+[21:50:54] [TRACE] (app.h:86) Setting property information (3)
+[21:50:54] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:50:54] [TRACE] (app.h:89) Property: 3, Value: 561925520 (Setting)
+[21:50:54] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:50:54] [TRACE] (app.h:95) Dumping values:
+[21:50:54] [TRACE] (app.h:96) ---------------------
+[21:50:54] [TRACE] (app.h:98) Value (0): 0
+[21:50:54] [TRACE] (app.h:98) Value (1): 561923312
+[21:50:54] [TRACE] (app.h:98) Value (2): 561926128
+[21:50:54] [TRACE] (app.h:98) Value (3): 561925520
+[21:50:54] [TRACE] (app.h:99) ---------------------
+[21:50:54] [TRACE] (app.h:86) Setting property information (0)
+[21:50:54] [TRACE] (app.h:87) Values size / capacity (before): 4/4
+[21:50:54] [TRACE] (app.h:89) Property: 0, Value: 561926192 (Setting)
+[21:50:54] [TRACE] (app.h:93) Values size / capacity (after): 4/4
+[21:50:54] [TRACE] (app.h:95) Dumping values:
+[21:50:54] [TRACE] (app.h:96) ---------------------
+[21:50:54] [TRACE] (app.h:98) Value (0): 561926192
+[21:50:54] [TRACE] (app.h:98) Value (1): 561923312
+[21:50:54] [TRACE] (app.h:98) Value (2): 561926128
+[21:50:54] [TRACE] (app.h:98) Value (3): 561925520
+[21:50:54] [TRACE] (app.h:99) ---------------------
+[21:50:54] [INFO] (resources.cpp:151) Using 16 threads to load resources!
+[21:50:54] [TRACE] (resources.cpp:41) Registered texture test.png @ /home/brett/git/parksandrec/resources/textures/test.png
+[21:50:54] [TRACE] (window.cpp:72) Complied with GLFW 3.3.8
+[21:50:54] [DEBUG] (window.cpp:80) Using GLFW 3.3.8
+[21:50:54] [INFO] (window.cpp:196) Loaded OpenGL 4.6
+[21:50:54] [DEBUG] (resources.cpp:54) Beginning loading of resources
+[21:50:54] [TRACE] (resources.cpp:76) Processing Texture /home/brett/git/parksandrec/resources/textures/test.png
+[21:50:54] [TRACE] (resources.cpp:88) Loaded texture 'test.png' with width/height: (1920, 1009)
+[21:50:54] [TRACE] (resources.cpp:129) Loaded texture 'test.png' to graphics card!
+[21:50:54] [INFO] (resources.cpp:147) All resources have been loaded. A total of 1 textures!
+[21:52:27] [DEBUG] (resources.cpp:158) Beginning texture cleanup
+[21:52:27] [INFO] (resources.cpp:161) Finished cleaning up loose resources!
+[21:52:27] [INFO] (main.cpp:32) Engine has stopped running. Have a nice day!
+[21:52:27] [STDOUT] (profiler.cpp:35) +--------------------------------{ Genetic }--------------------------------+
+[21:52:27] [STDOUT] (profiler.cpp:35) |  Order  |  Count  |  Interval  |  Time (ms)  |  Time (ns)  |  Total (ms)  |
+[21:52:27] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+
+[21:52:27] [STDOUT] (profiler.cpp:35) +---------+---------+------------+-------------+-------------+--------------+

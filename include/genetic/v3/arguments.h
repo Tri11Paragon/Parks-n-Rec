@@ -17,6 +17,7 @@ namespace parks::genetic {
     
     struct Color {
         double r, g, b;
+        bool bw = false;
         
         explicit Color(double _r, double _g, double _b) {
             r = _r;
@@ -40,6 +41,7 @@ namespace parks::genetic {
             r = v;
             g = 0;
             b = 0;
+            bw = true;
         }
     };
     

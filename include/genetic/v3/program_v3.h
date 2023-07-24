@@ -24,6 +24,12 @@ namespace parks::genetic {
             int size = 1;
             int max_height;
             
+            static size_t getPixelPosition(unsigned int x, unsigned int y){
+                return x * CHANNELS + y * WIDTH * CHANNELS;
+            }
+            static double similarity(const unsigned char* pixels, unsigned int x, unsigned int y, int size);
+            static double aroundSimilarity(const unsigned char* pixels, unsigned int x, unsigned int y, int size);
+            
             void generateRandomTree(int n);
             
             Color execute_internal(double x, double y, int node);
@@ -31,6 +37,7 @@ namespace parks::genetic {
             explicit GeneticTree(int max_height): max_height(max_height) {
                 for (int i = 0; i < max_height; i++)
                     size *= 2;
+                size += 1;
                 nodes = new GeneticNode*[size];
                 
                 for (int i = 0; i < size; i++)
@@ -76,9 +83,14 @@ namespace parks::genetic {
             }
             
             static int height(int node);
-            int subtreeSize(int n) const;
+            [[nodiscard]] int subtreeSize(int n) const;
             
             void deleteSubtree(int n);
+            std::pair<GeneticNode**, size_t> moveSubtree(int n);
+            void insertSubtree(int n, GeneticNode** tree, size_t size);
+            void processImage(unsigned char* pixels);
+            static double evaluate(const unsigned char* pixels);
+            double evaluate();
             
             void deleteTree(){
                 for (int i = 0; i < size; i++) {
@@ -92,6 +104,10 @@ namespace parks::genetic {
             }
             
             void mutate();
+            
+            void crossover(GeneticTree* other);
+            
+            static GeneticTree* breed(GeneticTree* parent1, GeneticTree* parent2);
             
             ~GeneticTree(){
                 deleteTree();
@@ -115,15 +131,12 @@ namespace parks::genetic {
             
             unsigned char pixels[WIDTH * HEIGHT * CHANNELS];
             GeneticTree* tree;
+            GeneticTree* last_tree = nullptr;
+            GeneticTree* saved_tree = nullptr;
             
-            static size_t getPixelPosition(unsigned int x, unsigned int y){
-                return x * CHANNELS + y * WIDTH * CHANNELS;
-            }
             void regenTreeDisplay();
             
-            void processImage();
-            
-            float renderProgress;
+            float renderProgress = 0;
         public:
             Program() = default;
             
